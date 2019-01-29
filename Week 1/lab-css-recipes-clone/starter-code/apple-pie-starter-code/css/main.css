@@ -31,6 +31,14 @@ body {
     margin:0 auto;
 }
 
+.dash {
+    list-style-type: none;
+}
+
+ul li::before {
+    content:"- "
+}
+
 .content {
     display: flex;
     justify-content: center;

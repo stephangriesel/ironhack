@@ -1,0 +1,49 @@
+/*
+Colors:
+
+Text: 1A1A1A
+Green: #00B172
+White: #FFF
+
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bg-img {
+  color:#FFF;
+  background: url("../images/landing.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+
+nav {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height:100px;
+}
+
+.logo img {
+  width: 30%;
+}
+
+.logo {
+  display: inline;
+  width: 50%;
+}
+
+ul li {
+  list-style: none;
+  display: inline;
+}
+
+.bg-img {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
