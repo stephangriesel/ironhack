@@ -6,7 +6,10 @@ paragraph grey: #5b5e6d;
 nav grey: #5b5e6d;
 */
 
+body {
+    font-family:CircularPro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
 
+}
 
 /* Navbar */
 
@@ -34,17 +37,109 @@ nav {
     font-family:CircularPro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
 }
 
+/* Buttons */
+
+.btn-invert {
+    background:#FFF;
+    font-size:20px;
+    padding:20px;
+    margin-top:20px;
+    width:70%;
+    color:#192592;
+    border-radius:5px;
+    border:solid 1px #192592;
+}
+
+.btn {
+    color:#FFF;
+    font-size:20px;
+    padding:20px;
+    margin-top:20px;
+    width:70%;
+    border:none;
+    background-color:#192592;
+    border-radius:5px;
+}
+
 /* Header */
+
+.flex-parent {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-parent h1 {
+    justify-content: center;
+}
+
+header h1 {
+    padding:5px 25px;
+}
+
+header p {
+    padding:0 25px;
+}
 
 header img {
     width:100%;
 }
 
-@media (min-width:1000px) {
+input {
+    padding:20px;
+    width:65%;
+    text-align: left;
+    border:1px solid #cccccc;
+    font-size:20px;
+}
 
-    img.logo {
-        
-    }
+.flex-parent {
+    display:flex;
+}
+
+.flex-child {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin:40px;
+
+}
+
+/* Main */
+
+main img {
+    margin:25px 25px;
+    width:300px;
+}
+
+main p {
+    padding: 0 25px;
+}
+
+.grey {
+    background-color:#F4F3F4;
+}
+
+/* Footer */
+
+footer ul {
+    list-style: none;
+}
+
+.flex-child-footer {
+
+}
+
+.full-width {
+    width:100%;
+}
+
+.menu-bottom {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width:1000px) {
 
     .hamburger-icon {
         display:none;
@@ -56,11 +151,13 @@ header img {
     }
     
     .menu {
-        display: block;
+        display:flex;
         margin-right:20px;
+        list-style:none;
+    }
+
+    .menu li {
+        padding-right:10px;
     }
     
-    ul li{
-        display:inline;
-    }
 }
