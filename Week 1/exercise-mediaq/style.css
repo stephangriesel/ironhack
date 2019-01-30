@@ -4,12 +4,29 @@
     background-color:blue;
 }
 
+#nav {
+    display:none;
+}
+
+#hamburger img{
+    width:25px;
+}
+
 @media (min-width:1000px) {
     #box {
         width:200px;
         height:200px;
         background-color: red;
     }
+
+    #nav {
+        display:block;
+    }
+
+    #hamburger img {
+        display:none;
+    }
+
 }
 
 @media (min-width: 1001px) {
@@ -17,5 +34,12 @@
         width:200px;
         height:200px;
         background-color: yellow;
+    }
+    #nav {
+        display:block;
+    }
+
+    #hamburger img {
+        display:none;
     }
 }
