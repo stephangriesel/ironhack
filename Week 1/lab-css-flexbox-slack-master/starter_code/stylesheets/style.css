@@ -137,9 +137,38 @@ footer ul {
 .menu-bottom {
     display:flex;
     flex-wrap: wrap;
+    padding:40px;
 }
 
-@media (min-width:1000px) {
+.bottom-menu-item {
+    width:35%;
+}
+
+.bottom {
+    display:flex;
+    flex-direction: column;
+    background-color:#F4F3F4;
+    padding:40px;
+}
+
+.full-width ul {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-width li {
+    margin:10px;
+}
+
+.full-width img {
+    display: flex;
+
+
+}
+
+
+@media (min-width:961px) {
 
     .hamburger-icon {
         display:none;
@@ -158,6 +187,10 @@ footer ul {
 
     .menu li {
         padding-right:10px;
+    }
+
+    .bottom-menu-item {
+        width:20%;
     }
     
 }
