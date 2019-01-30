@@ -6,17 +6,61 @@ paragraph grey: #5b5e6d;
 nav grey: #5b5e6d;
 */
 
-body {
-    margin:0;
-    padding:0;
+
+
+/* Navbar */
+
+img.logo {
+    width:150px;
+    margin-left:20px;
 }
 
 nav {
+    height: 80px;
     display:flex;
-    position: fixed;
-    height:80px;
+    justify-content: space-between;
+    background:#FFFFFF;
 }
 
-.logo {
-    width:150px;
+.hamburger-icon {
+    width:30px;
+    height: 30px;
+    margin-right:20px;
+    margin-top:18px;
+}
+
+.menu {
+    display:none;
+    font-family:CircularPro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
+}
+
+/* Header */
+
+header img {
+    width:100%;
+}
+
+@media (min-width:1000px) {
+
+    img.logo {
+        
+    }
+
+    .hamburger-icon {
+        display:none;
+    }
+
+    nav {
+        display:flex;
+        align-items: center;
+    }
+    
+    .menu {
+        display: block;
+        margin-right:20px;
+    }
+    
+    ul li{
+        display:inline;
+    }
 }
