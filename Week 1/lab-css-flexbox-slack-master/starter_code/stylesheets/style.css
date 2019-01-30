@@ -1,0 +1,22 @@
+/*
+background-grey: #F4F3F4;
+button-purple: #192592
+main-titles dark-grey: #2C303F;
+paragraph grey: #5b5e6d;
+nav grey: #5b5e6d;
+*/
+
+body {
+    margin:0;
+    padding:0;
+}
+
+nav {
+    display:flex;
+    position: fixed;
+    height:80px;
+}
+
+.logo {
+    width:150px;
+}

@@ -27,7 +27,7 @@ Write a function findLongestWord that takes an array of words and returns the lo
 
 // 1.
 
-var array = ['mystery',
+/*var array = ['mystery',
 'brother',
 'aviator',
 'crocodile',
@@ -43,7 +43,7 @@ for (var i = 0; i < array.length; i++) {
     } 
 }
 
-console.log(findLongestWord);
+console.log(findLongestWord);*/
 
 // 2.
 
@@ -155,6 +155,88 @@ var words = [
   
   let unique = [...new Set(words)];
   console.log(unique);
+
+  // JURGEN SOLUTION
+
+  function avgFinder(anArrayOfWords) {
+    var total = 0
+    for(let i = 0; i < anArrayOfWords.length; i++) {
+      total += anArrayOfWords[i].length
+    }
+  
+    return total / anArrayOfWords.length
+  }
+  var words = [
+      'seat',
+      'correspond',
+      'table',
+      'motif',
+      'hole',
+      'closet',
+      'supercalifragilasticexpialidou234567890k',
+      'chaos',
+      'fuel',
+      'palace'
+  ]
+  
+  console.log(avgFinder(words))
+  
+  var words2 = [
+    'crab',
+    'poison',
+    'contagious',
+    'simple',
+    'bring',
+    'sharp',
+    'playground',
+    'poison',
+    'communion',
+    'simple',
+    'bring'
+  ];
+  
+  var words3 = [
+    'crab',
+    'poison',
+    'contagious',
+    'simple',
+    'bring',
+    'sharp',
+    'playground',
+    'playground',
+    'closet',
+    'airplane',
+    'poison',
+    'communion',
+    'simple',
+    'bring'
+  ];
+  var uniqueArray = []
+  
+  for(let i = 0; i < words2.length; i++) {
+    if(uniqueArray.indexOf(words2[i]) == -1) {
+      uniqueArray.push(words2[i])
+    } 
+  }
+  
+  console.log(uniqueArray)
+  
+  function makeUnique(anArray) {
+    var uniqueArray = []
+  
+    for(let i = 0; i < anArray.length; i++) {
+      if(uniqueArray.indexOf(anArray[i]) == -1) {
+        uniqueArray.push(anArray[i])
+      } 
+    }
+  
+    return uniqueArray
+  }
+  
+  makeUnique(words2)
+  makeUnique(words3)
+
+  // JURGEN SOLUTION END
 
   /*function uniquifyArray(words) {
       let unique = {};
@@ -306,6 +388,8 @@ var newArray = howManyTimes(words);
 console.log(newArray);
 
 // https://gist.github.com/ralphcrisostomo/3141412
+
+
  
 
   
