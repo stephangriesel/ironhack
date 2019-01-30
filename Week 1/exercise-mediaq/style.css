@@ -1,0 +1,21 @@
+#box {
+    width:200px;
+    height:200px;
+    background-color:blue;
+}
+
+@media (min-width:1000px) {
+    #box {
+        width:200px;
+        height:200px;
+        background-color: red;
+    }
+}
+
+@media (min-width: 1001px) {
+    #box {
+        width:200px;
+        height:200px;
+        background-color: yellow;
+    }
+}
