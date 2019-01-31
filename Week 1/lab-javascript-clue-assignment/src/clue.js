@@ -17,18 +17,7 @@ Create one data structure for each of the people, weapons, and rooms described a
 
 After creating the data structure, create an array for each type of data and push every document into their corresponding array.
 
-For example:
-
-var mrGreen = {
-  // Properties
-};
-
-var rope = {
-  // Properties
-}
-
-// etc
-After creating the data structure, push every document into their corresponding array. charactersArray, weaponsArray, roomsArray.*/
+*/
 
 // Characters 
 
@@ -181,6 +170,76 @@ var patioRoom = {
 
 // After creating the data structure, push every document into their corresponding array. charactersArray, weaponsArray, roomsArray.
 
-var charactersArray = []
-var weaponsArray = []
-var roomsArray = []
+var charactersArray = [mrGreen,drOrchid,profPlum,missScarlet,mrsPeacock,mrMustard]
+var weaponsArray = [rope,knife,candlestick,dumbbell,poison,axe,bat,trophy,pistol]
+var roomsArray = [diningRoom,conservatoryRoom,studyRoom,libraryRoom,billiardRoom,loungeRoom,ballRoom,hallRoom,spaRoom,livingRoom,obervatoryRoom,theaterRoom,guestRoom,patioRoom]
+
+/* 
+
+Iteration 2 - Creating the mistery
+At the beginning of the game, players shuffle each one of the card stacks to create a combination of suspect, weapon and room. This will be the mystery to solve.
+
+Remember our tests!
+We will be working with test again! You need to open the SpecRunner.html file in order to see them. The following instructions will guide you through all the methods and functionality your code should have to pass all the tests.
+
+// 1. Random Selector
+Create a method randomSelector to randomly select one element from a card stack. The method should receive an array as an argument, and return randomly one of the elements of the array.
+*/
+
+function randomSelector (gameArray) {
+    var randomElemChar = ""
+    var resultOut = gameArray[Math.floor(Math.random() * gameArray.length)] // shorthand Math.floor ~~
+   //console.log(resultOut)
+    return resultOut
+}
+let randomCharacter = randomSelector(charactersArray)
+let randomWeapon = randomSelector(weaponsArray)
+let randomRoom = randomSelector(roomsArray)
+
+
+var misteryEnvelope = [randomSelector(charactersArray), randomSelector(weaponsArray), randomSelector(roomsArray)]
+
+
+
+/* 
+
+// 2. Create the mystery
+We need to create a pickMistery method that will call randomSelector for each card stack, and return an array with the 3 picked cards, a character, a weapon and a room. Our mystery should be stored on a misteryEnvelope variable.
+
+*/
+
+var misteryEnvelope = []
+
+function pickMistery () {
+
+    misteryEnvelope.push(randomCharacter)
+    misteryEnvelope.push(randomRoom)
+    misteryEnvelope.push(randomWeapon)
+
+}
+
+pickMistery()
+
+console.log(misteryEnvelope)
+
+/* 
+
+Iteration 3 - Revealing the mistery
+Finally, we need to reveal the mystery. Create a revealMistery method, that will receive our misteryEnvelope array as an argument and return the revealed mystery like this:
+
+<FIRST NAME> <LAST NAME> killed Mr.Boddy using the <WEAPON> in the <PLACE>!!!!
+
+*/
+
+function revealMistery (selectedCards){
+    
+    var firstName = selectedCards[0].first_name
+    var lastName = selectedCards[0].last_name
+    var weapon = selectedCards[2].name
+    var place = selectedCards[1].name
+
+    return firstName + lastName + " " + "killed Mr.Boddy using " + weapon + " in the " + place;
+}
+
+
+console.log(revealMistery(misteryEnvelope));
