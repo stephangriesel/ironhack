@@ -218,3 +218,103 @@ var words = new Array(
 var newArray = howManyTimes(words);
 
 console.log(newArray);
+
+// Jurgen Example
+
+var words = [
+  'seat',
+  'correspond',
+  'linen',
+  'motif',
+  'hole',
+  'smell',
+  'smart',
+  'chaos',
+  'fuel',
+  'palace'
+];
+
+var total = 0
+for(let i = 0; i < words.length; i++) {
+total += words[i].length
+}
+
+var avg = total / words.length
+
+function avgFinder(anArrayOfWords) {
+var total = 0
+for(let i = 0; i < anArrayOfWords.length; i++) {
+  total += anArrayOfWords[i].length
+}
+
+return total / anArrayOfWords.length
+}
+var words = [
+  'seat',
+  'correspond',
+  'table',
+  'motif',
+  'hole',
+  'closet',
+  'supercalifragilasticexpialidou234567890k',
+  'chaos',
+  'fuel',
+  'palace'
+]
+
+console.log(avgFinder(words))
+
+var words2 = [
+'crab',
+'poison',
+'contagious',
+'simple',
+'bring',
+'sharp',
+'playground',
+'poison',
+'communion',
+'simple',
+'bring'
+];
+
+var words3 = [
+'crab',
+'poison',
+'contagious',
+'simple',
+'bring',
+'sharp',
+'playground',
+'playground',
+'closet',
+'airplane',
+'poison',
+'communion',
+'simple',
+'bring'
+];
+var uniqueArray = []
+
+for(let i = 0; i < words2.length; i++) {
+if(uniqueArray.indexOf(words2[i]) == -1) {
+  uniqueArray.push(words2[i])
+} 
+}
+
+console.log(uniqueArray)
+
+function makeUnique(anArray) {
+var uniqueArray = []
+
+for(let i = 0; i < anArray.length; i++) {
+  if(uniqueArray.indexOf(anArray[i]) == -1) {
+    uniqueArray.push(anArray[i])
+  } 
+}
+
+return uniqueArray
+}
+
+makeUnique(words2)
+makeUnique(words3)
