@@ -211,9 +211,10 @@ We need to create a pickMistery method that will call randomSelector for each ca
 */
 
 var misteryEnvelope = [randomSelector(charactersArray), randomSelector(weaponsArray), randomSelector(roomsArray)]
+/*console.log("1.")
+console.log(misteryEnvelope)*/
 
-// Empty array, else it is double, no idea why!
-var misteryEnvelope = []
+//var misteryEnvelope = []
 
 function pickMistery () {
 
@@ -226,7 +227,7 @@ function pickMistery () {
 console.log(misteryEnvelope)*/
 pickMistery()
 
-//console.log(misteryEnvelope)
+console.log(misteryEnvelope)
 
 /* 
 
@@ -248,47 +249,46 @@ function revealMistery (selectedCards){
 }
 
 
-//console.log(revealMistery(misteryEnvelope));
+console.log(revealMistery(misteryEnvelope));
 
 // DOM 
 
 function revealCharacterImage (selectedCards){
     var charImage = selectedCards[0].image
-    document.getElementById("charImg").src = charImage
-    //console.log(charImage)
+
     return charImage
 }
 
-revealCharacterImage(misteryEnvelope)
+//console.log(revealCharacterImage(misteryEnvelope))
 
-function revealCharacterName (selectedCards){
-    var charName = selectedCards[0].first_name
-    document.getElementById("name").innerHTML = charName
-    //console.log(charName)
-    return charName
-}
+var charReveal = document.getElementById("charImg").src
 
-revealCharacterName(misteryEnvelope)
 
-function revealWeapon (selectedCards) {
-    var weaponName = selectedCards[1].name
-    document.getElementById("weapon").innerHTML = weaponName
-    //console.log(weaponName)
-    return weaponName
-}
+//.misteryEnvelope[0].image
 
-revealWeapon(misteryEnvelope)
 
-function revealRoom (selectedCards) {
-    var roomName = selectedCards[2].name
-    document.getElementById("room").innerHTML = roomName
-    //console.log(roomName)
-    return roomName
-}
+//misteryEnvelope[0].image
 
-revealRoom(misteryEnvelope)
 
-document.getElementById("btn").addEventListener("click", pickMistery);
+/* Practice 
+var element = document.getElementById("head");
+element.innerHTML = "New Heading";
+
+var element2 = document.getElementById("par");
+element2.innerHTML = "New paragraph";
+
+var element3 = document.getElementById("foot");
+element3.innerHTML = "Hallo from foot";
+
+var element4 = document.getElementById("copy");
+element4.innerHTML = "Another footer";
+element4.style.backgroundColor = "#942353";
+element4.style.border = "1px #121424 solid";
+element4.style.color = "#FFFFFF";
+element4.style.marginTop = "30px";
+element4.style.marginBottom = "30px";
+element4.style.paddingBottom = "50px";*/
+
 
 
 
