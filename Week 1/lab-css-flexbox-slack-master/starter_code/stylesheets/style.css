@@ -102,7 +102,21 @@ input {
     justify-content: center;
     align-items: center;
     margin:40px;
+}
 
+.flex-child-left {
+    display: flex;
+    flex-direction:column;
+    justify-content: left;
+    align-items: left;
+    margin:40px;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Main */
@@ -170,6 +184,26 @@ footer ul {
 
 @media (min-width:961px) {
 
+    .flex-parent {
+        display:flex;
+        flex-direction:row;
+    }
+    
+    .flex-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex-child-left {
+        width: 50%;
+        }
+
+    .grey {
+        display:flex;
+        flex-direction: column;
+    }
+
     .hamburger-icon {
         display:none;
     }
@@ -192,5 +226,10 @@ footer ul {
     .bottom-menu-item {
         width:20%;
     }
+
+    .flex-half img {
+    }
+
+
     
 }
