@@ -1,7 +1,10 @@
-var element = document.getElementById("head");
-element.innerHTML = "New Heading";
+/*var element = document.getElementById("head");
+element.innerHTML = "New Heading";*/
 
-var element2 = document.getElementById("par");
+var test = document.getElementsByClassName("test");
+test[0].innerHTML = "Test";
+
+/*var element2 = document.getElementById("par");
 element2.innerHTML = "New paragraph";
 
 var element3 = document.getElementById("foot");
@@ -15,7 +18,7 @@ element4.style.color = "#FFFFFF";
 element4.style.marginTop = "30px";
 element4.style.marginBottom = "30px";
 element4.style.paddingBottom = "50px";
-//document.getElementById("head").innerHTML = "I am head";
+//document.getElementById("head").innerHTML = "I am head";*/
 
 /* 1 . understand basics: 
 - Math.floor (x)

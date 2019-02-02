@@ -288,7 +288,12 @@ function revealRoom (selectedCards) {
 
 revealRoom(misteryEnvelope)
 
-document.getElementById("btn").addEventListener("click", pickMistery);
+
+/*document.getElementById("btn").addEventListener("click", revealMistery);
+
+function misteryEnvelope() {
+  document.getElementById("btn").innerHTML = Date();
+}*/
 
 
 
