@@ -14,14 +14,14 @@ for ([initialExpression]; [condition]; [incrementExpression])
 
 /* 2.   define a function that counts from 0 to 100 if called */
 
-// Stephan Copy
+//Stephan Copy
 /*function countNumbers () {
     for(i = 0; i < 101; i++ ) {
         console.log(i); 
     }
 }
 
-countNumbers()*/
+countNumbers()
 
 /* Gijs Copy
 function counter (amountOfCount) {
@@ -33,42 +33,31 @@ function counter (amountOfCount) {
 counter(100);
 */
 
-// Question to Jurgen
-// 1. How would I pass a value in parameter? I tried below
-
-/* var test = countFunction(100);
-
-function countNumbers (m) {
-    for(i = 0; i < m; i++ ) {
-        console.log(m); 
-    }
-}
-
-countNumbers()*/
-
 ///////////////////////////////
 
 /* 3.   define a function that counts from 0 to whatever value you passed to it, call this function with 3 different arguments */
 
-// Stephan Comments: I can not continue if I don't understand above example.
+// This does not look right, this only applies for 1 argument
 
-/* var numberValue = countFunction(20,30,50);
 
 function countFunction(a,b,c) {
-    console.log(a,b,c)
-} */
+    for(var p = 0; p < a; p++)
+    console.log(p)
+} 
+
+countFunction(30,50,70)
 
 ///////////////////////////////
 
 /* 4.   given this array: var arrayWords = ["cow", "chicken", "dog", "cat"] console log every element using a loop */
 
-/*var arrayWords = ["cow", "chicken", "dog", "cat"]
+var arrayWords = ["cow", "chicken", "dog", "cat"]
 var emptyArray = "";
 var i;
 for (i = 0; i < arrayWords.length; i++ ){
     emptyArray = emptyArray + arrayWords[i] + " ";
 }
-console.log(emptyArray);*/
+console.log(emptyArray);
 
 /////////////////////////////////
 
