@@ -1,16 +1,85 @@
+// Iteration 1
+
 var product = document.getElementsByClassName("product");
 product[0].innerHTML = "IronBubble-Head";
 
-var total = document.getElementsByClassName("tota")
+var price = document.getElementsByClassName("price")[0];
+price.innerHTML = 2;
 
-// Iteration 1: Creating one product
-// We will start by creating the HTML for one of your products. It should look like this:
+var total = document.getElementsByClassName("total")[0];
+total.innerHTML = 0;
 
-// Every product will have:
+let calculateBtn = document.getElementsByClassName("btn-success");
+//console.log(calculateBtn)
 
-// A wrapper div that contains all the HTML for that product.
-// A div with a span, showing the product name.
-// A div with a span, showing the cost of one unit.
-// A div with one label and one input, where the user will indicate how many units they will buy.
-// A div with a span, showing the total price for this product. This number should be the result of multiplying the amount of units multiplied by the price of one unit of that product. The default total price should be 0.
-// A div with a delete button, to remove the product from the list.
+calculateBtn[0].addEventListener("click", calculatePrices);
+
+function calculatePrices() {
+  var quantity = document.getElementsByClassName("qty")[0].value;
+  var totalPrice = quantity * price.innerHTML;
+
+  total.innerHTML = totalPrice;
+  console.log(totalPrice);
+}
+
+// Iteration 2: Add another product
+// Add a second product.
+
+var moreProduct = document.createElement("p");
+
+var addButton = document.getElementById("add-product");
+addButton.onclick = addNewProduct;
+
+function addNewProduct() {
+  var newProduct = `
+
+      <div class="product-name item">
+        <span class="product"></span>
+      </div>
+      <div class="cost-unit item">
+        <span class="price"></span>
+      </div>
+      <div class="quantity-product">
+        <label>QTY:</label>
+        <input class="qty" type="number" />
+      </div>
+      <div class="total-item">
+        <span class="total"></span>
+      </div>
+      <div class="delete-item">
+        <button class="btn-delete">Delete</button>
+      </div>
+
+    `;
+    
+var newWrapper = document.createElement("div");
+newWrapper.className = "wrapper";
+
+newWrapper.innerHTML = newProduct;
+var body = document.getElementsByTagName('body')[0];
+body.insertBefore(newWrapper,document.getElementById("button"));
+}
+
+// function addProductFunc() {
+//   var addProduct = document.createElement("wrapper");
+//   var textnode = document.createTextNode("New Product");
+//   node.appendChild(textnode);
+//   document.getElementsByClassName("product").appendChild(node);
+// }
+
+// Iteration 2: Add another product
+// Add a second product.
+
+// IDEAS:
+// <script>
+// function myFunction() {
+//   var node = document.createElement("LI");
+//   var textnode = document.createTextNode("Water");
+//   node.appendChild(textnode);
+//   document.getElementById("myList").appendChild(node);
+// }
+// </script>
+
+// <p><strong>Note:</strong><br>First create an LI node,<br> then create a Text node,<br> then append the Text node to the LI node.<br>Finally append the LI node to the list.</p>
+
+// // When you click on the Calculate Prices button, the total prices for both products should update their values based on each quantity specified.

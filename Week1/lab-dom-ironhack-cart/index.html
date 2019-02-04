@@ -9,7 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    
+
     <title>Ironhack cart</title>
   </head>
   <body>
@@ -21,22 +21,28 @@
         <span class="product"></span>
       </div>
       <div class="cost-unit item">
-        <span class="price">$2</span>
+        <span class="price"></span>
       </div>
       <div class="quantity-product">
         <label>QTY:</label>
-        <input class="qty" type="number">
+        <input class="qty" type="number" />
       </div>
       <div class="total-item">
-        <span class="total">$0.00</span>
+        <span class="total"></span>
       </div>
       <div class="delete-item">
         <button class="btn-delete">Delete</button>
-      </div> 
-    </div>
-    <div class="calc">
-        <button class="btn-success">Calculate</button>
       </div>
-      <script type="text/javascript" src="./js/index.js"></script>
+    </div>
+  
+    <div class="calc">
+      <button class="btn-success">Calculate</button>
+    </div>
+
+    <div id="button">
+      <button id="add-product">Add Product</button>
+    </div>
+
+    <script type="text/javascript" src="./js/index.js"></script>
   </body>
 </html>
