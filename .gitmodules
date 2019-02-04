@@ -1,0 +1,3 @@
+[submodule "Week2/lab-javascript-chronometer"]
+	path = Week2/lab-javascript-chronometer
+	url = https://github.com/ironhack-labs/lab-javascript-chronometer
