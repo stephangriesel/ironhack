@@ -90,6 +90,4 @@ body.insertBefore(newWrapper,document.getElementById("button"));
 // }
 // </script>
 
-// <p><strong>Note:</strong><br>First create an LI node,<br> then create a Text node,<br> then append the Text node to the LI node.<br>Finally append the LI node to the list.</p>
 
-// // When you click on the Calculate Prices button, the total prices for both products should update their values based on each quantity specified.
