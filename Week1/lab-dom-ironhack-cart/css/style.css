@@ -8,6 +8,40 @@
   display:flex;
   justify-content: center;
   align-items: center;
+  margin:10px;
+}
+
+.price {
+  margin:0 10px;
+}
+
+.product-name {
+  margin:0 10px;
+}
+
+
+input.qty {
+  width:30px;
+}
+
+.total-item {
+  margin:0 10px;
+}
+
+.delete-item {
+  margin: 0 10px;
+}
+
+.quantity-product {
+  margin:0 10px;
+}
+
+
+#button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:10px;
 }
 
 .item {

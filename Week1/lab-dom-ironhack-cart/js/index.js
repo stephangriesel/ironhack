@@ -9,7 +9,7 @@ price.innerHTML = 2;
 var total = document.getElementsByClassName("total")[0];
 total.innerHTML = 0;
 
-let calculateBtn = document.getElementsByClassName("btn-success");
+var calculateBtn = document.getElementsByClassName("btn-success");
 //console.log(calculateBtn)
 
 calculateBtn[0].addEventListener("click", calculatePrices);
@@ -30,21 +30,31 @@ var moreProduct = document.createElement("p");
 var addButton = document.getElementById("add-product");
 addButton.onclick = addNewProduct;
 
+
 function addNewProduct() {
+
+  var name = document.getElementById("new-name");
+  product.innerHTML = name;
+  
+
+  var priceAdd = document.getElementById("new-price");
+
+
+
   var newProduct = `
 
       <div class="product-name item">
-        <span class="product"></span>
+        <span class="product">${name}</span>
       </div>
       <div class="cost-unit item">
-        <span class="price"></span>
+        <span class="price">${priceAdd}</span>
       </div>
       <div class="quantity-product">
         <label>QTY:</label>
         <input class="qty" type="number" />
       </div>
       <div class="total-item">
-        <span class="total"></span>
+        <span class="total">0</span>
       </div>
       <div class="delete-item">
         <button class="btn-delete">Delete</button>
@@ -80,6 +90,4 @@ body.insertBefore(newWrapper,document.getElementById("button"));
 // }
 // </script>
 
-// <p><strong>Note:</strong><br>First create an LI node,<br> then create a Text node,<br> then append the Text node to the LI node.<br>Finally append the LI node to the list.</p>
 
-// // When you click on the Calculate Prices button, the total prices for both products should update their values based on each quantity specified.
