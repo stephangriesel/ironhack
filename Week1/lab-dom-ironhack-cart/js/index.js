@@ -90,3 +90,5 @@ function removeChild() {
   var prodItem = document.querySelector(".wrapper");
   prodItem.parentNode.removeChild(prodItem);
 }
+
+
