@@ -87,9 +87,6 @@ var deleteBtn = document.getElementsByClassName("btn-delete");
 deleteBtn[0].addEventListener("click", removeChild);
 
 function removeChild() {
-  var elem = document.querySelector(".wrapper");
-  elem.parentNode.removeChild(elem);
+  var prodItem = document.querySelector(".wrapper");
+  prodItem.parentNode.removeChild(prodItem);
 }
-
-
-
