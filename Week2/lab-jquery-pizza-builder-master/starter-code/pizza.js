@@ -31,12 +31,12 @@ $(".btn-mushrooms").on("click", function() {
   });
 
 $(".btn-sauce").on("click", function() {
-    $(".sauce").toggle(".sauce-white");
+    $(".sauce").toggle("sauce-white");
     console.log("hello whitesauce")
   });
 
 $(".btn-crust").on("click", function() {
     $(".cheese").toggle("cheese");
     console.log("hello crust")
-  });
+  }); // Comment to TA: gluten free is without cheese right?
 
