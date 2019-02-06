@@ -24,16 +24,16 @@ function calculatePrices() {
     document.getElementsByClassName("total-item")[
       i
     ].innerHTML = totalProductPrice;
-    console.log("Price per elemet", totalProductPrice);
+    console.log("Price per element", totalProductPrice);
   }
-  console.log("Total price", total);
-  console.log(allPrices, allQuantities);
+  // console.log("Total price", total);
+  // console.log(allPrices, allQuantities);
 
   var quantity = document.getElementsByClassName("qty")[0].value;
   //var totalPrice = quantity * price.innerHTML;
 
   total.innerHTML = totalPrice;
-  console.log(totalPrice);
+  // console.log(totalPrice);
 }
 
 // Iteration 2: Add another product
@@ -46,10 +46,10 @@ addButton.onclick = addNewProduct;
 
 function addNewProduct() {
   var name = document.getElementById("new-name").value;
-  console.log(name);
+  // console.log(name);
 
   var price = document.getElementById("new-price").value;
-  console.log(price);
+  // console.log(price);
 
   var newProduct = `
 
@@ -80,15 +80,22 @@ function addNewProduct() {
   body.insertBefore(newWrapper, document.getElementById("button"));
 }
 
+// console.log((addNewProduct));
+
 // // Iteration 4: Deleting a product
 // // Associate the “Delete” buttons to click events so that when you click one, it deletes that product from the list. Steps to follow:
 
 var deleteBtn = document.getElementsByClassName("btn-delete");
-deleteBtn[0].addEventListener("click", removeChild);
+deleteBtn[0].addEventListener("click", removeChild); 
+// The removeChild function below only deletes one wrapper because index number is set to [0]. 
+//Line 92 - 95 is just for testing.
+// deleteBtn[i].addEventListener("click", removeChild);
+// for (var i = 0;i < 100;i++) {
+//   console.log(i);
+// }
 
 function removeChild() {
   var prodItem = document.querySelector(".wrapper");
   prodItem.parentNode.removeChild(prodItem);
 }
-
 
