@@ -16,27 +16,27 @@
 // Create the code to display those elements when the buttons are clicked.
 
 $(".btn-green-peppers").on("click", function() {
-    
+    $(".green-pepper").toggle("green-pepper");
     console.log("hello greenpepper")
   });
 
 $(".btn-pepperonni").on("click", function() {
-    
+    $(".pep").toggle("pep");
     console.log("hello pepperonni")
   });
 
 $(".btn-mushrooms").on("click", function() {
-    
+    $(".mushroom").toggle("mushroom");
     console.log("hello mushroom")
   });
 
 $(".btn-sauce").on("click", function() {
-    
+    $(".sauce").toggle(".sauce-white");
     console.log("hello whitesauce")
   });
 
 $(".btn-crust").on("click", function() {
-    
+    $(".cheese").toggle("cheese");
     console.log("hello crust")
   });
 
