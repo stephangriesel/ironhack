@@ -1,7 +1,3 @@
 [submodule "Week2/lab-javascript-chronometer"]
 	path = Week2/lab-javascript-chronometer
 	url = https://github.com/ironhack-labs/lab-javascript-chronometer
-
-[submodule "Week2/lab-jquery-pizza-builder"]
-	path = Week2/lab-jquery-pizza-builder
-	url = https://github.com/ironhack-labs/lab-jquery-pizza-builder
