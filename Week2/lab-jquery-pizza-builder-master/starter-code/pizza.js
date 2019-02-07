@@ -15,6 +15,14 @@
 // <section class="pep two">2</section>
 // Create the code to display those elements when the buttons are clicked.
 
+// Think in psuedo....
+// document.getElementsByClassName('btn-green-btn')[0].addEventListener('click',function(){
+
+//   document.getElementsByClassName('green')[0]
+//   // if element with classname green pepper has css display !none change to none otherwise change to display:block
+  
+// })
+
 $(".btn-green-peppers").on("click", function() {
     $(".green-pepper").toggle("green-pepper");
     console.log("hello greenpepper")
@@ -30,13 +38,15 @@ $(".btn-mushrooms").on("click", function() {
     console.log("hello mushroom")
   });
 
+
+
 $(".btn-sauce").on("click", function() {
-    $(".sauce").toggle("sauce-white");
+    $(".sauce-white").toggle(".sauce-white");
     console.log("hello whitesauce")
   });
 
 $(".btn-crust").on("click", function() {
-    $(".cheese").toggle("cheese sauce-white");
+    $(".crust-gluten-free").toggle("cheese");
     console.log("hello crust")
   }); 
 
@@ -50,4 +60,13 @@ $(".btn-crust").on("click", function() {
 //   <section class="sauce sauce-white"></section>
 // </section>
 // As you can see, the sections have two classes .crust-gluten-free and sauce-white that may not be the best choice.
+
+// This seems really simple but I just hide the white sauce & gluten free curst on load
+$('.sauce-white').css('display','none'); 
+$('.crust-gluten-free').css('display','none'); 
+
+
+
+
+
 
