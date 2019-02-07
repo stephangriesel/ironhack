@@ -9,10 +9,6 @@ price.innerHTML = 2;
 var total = document.getElementsByClassName("final-total")[0];
 total.innerHTML = 0;
 
-var calculateBtn = document.getElementsByClassName("btn-success");
-//console.log(calculateBtn)
-
-calculateBtn[0].addEventListener("click", calculatePrices);
 
 function calculatePrices() {
   var allPrices = document.getElementsByClassName("price");
@@ -77,7 +73,13 @@ function addNewProduct() {
 
   newWrapper.innerHTML = newProduct;
   var body = document.getElementsByTagName("body")[0];
-  body.insertBefore(newWrapper, document.getElementById("button"));
+  var container = document.getElementsByClassName("product-container")[0];
+  container.appendChild(newWrapper)
+ 
+
+  addDeleteEvent()
+
+ // body.insertBefore(newWrapper, document.getElementsByClassName("calc")[0] );
 }
 
 // console.log((addNewProduct));
@@ -85,8 +87,10 @@ function addNewProduct() {
 // // Iteration 4: Deleting a product
 // // Associate the “Delete” buttons to click events so that when you click one, it deletes that product from the list. Steps to follow:
 
-var deleteBtn = document.getElementsByClassName("btn-delete");
-deleteBtn[0].addEventListener("click", removeChild); 
+
+// var deleteBtn = document.getElementsByClassName("btn-delete");
+// console.log(deleteBtn)
+// deleteBtn[0].addEventListener("click", removeChild); 
 // The removeChild function below only deletes one wrapper because index number is set to [0]. 
 //Line 92 - 95 is just for testing.
 // deleteBtn[i].addEventListener("click", removeChild);
@@ -94,8 +98,25 @@ deleteBtn[0].addEventListener("click", removeChild);
 //   console.log(i);
 // }
 
+function addDeleteEvent(){
+  var deleteBtn = document.getElementsByClassName("btn-delete");
+  for(var i = 0 ; i < deleteBtn.length; i ++){
+    deleteBtn[i].addEventListener("click", removeChild); 
+  }
+}
+
 function removeChild() {
   var prodItem = document.querySelector(".wrapper");
   prodItem.parentNode.removeChild(prodItem);
 }
 
+window.onload = function(){
+  //initialise
+  var calculateBtn = document.getElementsByClassName("btn-success");
+//console.log(calculateBtn)
+
+  calculateBtn[0].addEventListener("click", calculatePrices);
+
+  addDeleteEvent();
+
+}

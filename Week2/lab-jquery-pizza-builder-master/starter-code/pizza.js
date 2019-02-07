@@ -36,7 +36,18 @@ $(".btn-sauce").on("click", function() {
   });
 
 $(".btn-crust").on("click", function() {
-    $(".cheese").toggle("cheese");
+    $(".cheese").toggle("cheese sauce-white");
     console.log("hello crust")
-  }); // Comment to TA: gluten free is without cheese right?
+  }); 
+
+// Iteration 2: Sauce and crust options
+// Wait a minute… this pizza comes with white sauce and gluten-free crust by default! Since that is a ridiculous default setting, we need to fix this as fast as possible. The last two buttons on the left are supposed to handle special options for the sauce and crust of your pizza. Make it so regular sauce and crust are selected by default. Also write the JavaScript code that will let users select white sauce and gluten free crust if they want to choose them. Again, don’t worry about updating the price.
+
+// Both the crust and the sauce have their own HTML elements:
+
+// <section class="crust crust-gluten-free">
+//   <section class="cheese"></section>
+//   <section class="sauce sauce-white"></section>
+// </section>
+// As you can see, the sections have two classes .crust-gluten-free and sauce-white that may not be the best choice.
 
