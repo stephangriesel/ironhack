@@ -30,7 +30,7 @@ $(".btn-sauce").on("click", function() {
  $(".btn-crust").on("click", function() {
   $(".crust-gluten-free").toggle("crust-gluten-free");
   $(this).toggleClass("active");
-  $("section#main-crust").addClass("crust-gluten-free");
+  $("section#main-crust").toggle("crust-gluten-free");
   $("ul li:contains('gluten')").toggle( 1000 );
 });
 
