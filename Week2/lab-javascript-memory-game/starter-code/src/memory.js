@@ -17,6 +17,8 @@ MemoryGame.prototype.checkIfPair = function (firstCard, secondCard) {
 MemoryGame.prototype.isFinished = function () {
 };
 
-$(".card").on("click", function() {
-  $(".card").toggleClass("front")
+$("card").on("click", function() {
+  $( "card" ).children( ".back" ).toggle( ".back" );
 });
+
+

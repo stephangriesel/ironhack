@@ -78,9 +78,6 @@ $(".btn-crust").on("click", function() {
 
 $("section#main-crust").removeClass("crust-gluten-free");
 
-// Add tomato sauce
-// $(".sauce").addClass("sauce");
-
 // Hide white sauce & gluten free default
 
 $(".sauce-white").toggleClass("sauce-white");
@@ -91,14 +88,10 @@ $(".crust-gluten-free").hide();
 $("button#sauce").removeClass("active");
 $("button#gluten").removeClass("active");
 
-// Show tomato base
-
 // Hide options in price summary that is not on the pizza
 
 $("ul li:contains('gluten')").hide();
 $("ul li:contains('white')").hide();
-
-// Hide/display crust
 
 // Gijs example, for reference  :)
 
