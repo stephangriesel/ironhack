@@ -1,12 +1,25 @@
+// onload tomato sauce test
+
 var totalPrice = 10;
 
 // Buttons
 
 $(".btn-pepperonni").on("click", function() {
+ 
   $(".pep").toggle("pep");
   $(this).toggleClass("active");
   $("ul li:contains('pepperonni')").toggle( 1000 );
-  // if class is active add 1 to totalPrice else subtract 1 to totalPrice
+ // newPrice($(this), "pepperonni")
+
+ //var price = parseInt($(`ul li:contains('pepperonni')`).html().slice(1,2));
+  if ( $(this).hasClass("active") ) {
+    totalPrice += 1
+  } else {
+    totalPrice -= 1
+  }
+  console.log(totalPrice)
+  $("#total-price").html(totalPrice)
+
 });
 
 $(".btn-mushrooms").on("click", function() {
@@ -22,7 +35,7 @@ $(".btn-green-peppers").on("click", function() {
 });
 
 $(".btn-sauce").on("click", function() {
-  $(".sauce-white").toggle(".sauce-white");
+  $(".sauce").toggleClass("sauce-white");
   $(this).toggleClass("active");
   $("ul li:contains('white')").toggle( 1000 );
 });
@@ -38,12 +51,12 @@ $(".btn-sauce").on("click", function() {
 $("section#main-crust").removeClass("crust-gluten-free");
 
 // Add tomato sauce
-$(".sauce").addClass("sauce");
+// $(".sauce").addClass("sauce");
 
 
 // Hide white sauce & gluten free default
 
-$(".sauce-white").hide();
+$(".sauce-white").toggleClass("sauce-white");
 $(".crust-gluten-free").hide();
 
 // Change button state for items not added
@@ -64,5 +77,14 @@ $("ul li:contains('white')").hide();
 
 
 
-
+// function newPrice( $this, ingredient ){
+//   var price = parseInt($(`ul li:contains(${ingredient})`).html().slice(1,2));
+//   if ( $this.hasClass("active") ) {
+//     totalPrice += price;
+//   } else {
+//     totalPrice -= price;
+//   }
+//   console.log(totalPrice)
+//   $("#total-price").html(totalPrice)
+// }
 
