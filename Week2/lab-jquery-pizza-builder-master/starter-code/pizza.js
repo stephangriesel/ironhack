@@ -1,5 +1,3 @@
-// onload tomato sauce test
-
 var totalPrice = 13;
 
 // Buttons
@@ -9,18 +7,14 @@ $(".btn-pepperonni").on("click", function() {
   $(this).toggleClass("active");
   $("ul li:contains('pepperonni')").toggle(1000);
 
-  // Set topping price to variable to add to totalprice (see line 115):
-  // newPrice($(this), "pepperonni")
-  //var price = parseInt($(`ul li:contains('pepperonni')`).html().slice(1,2));
-
-  // If topping removed update totalprice
+  // If topping removed/added update totalprice
   if ($(this).hasClass("active")) {
     totalPrice += 1;
   } else {
     totalPrice -= 1;
   }
   console.log(totalPrice);
-  // pass value to totalprice id specified in html
+  // Pass value to totalprice id
   $("#total-price").html(totalPrice);
 });
 
@@ -43,14 +37,12 @@ $(".btn-green-peppers").on("click", function() {
   $(this).toggleClass("active");
   $("ul li:contains('green')").toggle(1000);
 
-  // If topping removed update totalprice
   if ($(this).hasClass("active")) {
     totalPrice += 1;
   } else {
     totalPrice -= 1;
   }
   console.log(totalPrice);
-  // pass value to totalprice id specified in html
   $("#total-price").html(totalPrice);
 });
 
@@ -59,14 +51,12 @@ $(".btn-sauce").on("click", function() {
   $(this).toggleClass("active");
   $("ul li:contains('white')").toggle(1000);
 
-  // If topping removed update totalprice
   if ($(this).hasClass("active")) {
     totalPrice += 3;
   } else {
     totalPrice -= 3;
   }
   console.log(totalPrice);
-  // pass value to totalprice id specified in html
   $("#total-price").html(totalPrice);
 });
 
@@ -75,14 +65,12 @@ $(".btn-crust").on("click", function() {
   $(this).toggleClass("active");
   $("ul li:contains('gluten')").toggle(1000);
 
-  // If topping removed update totalprice
   if ($(this).hasClass("active")) {
     totalPrice += 5;
   } else {
     totalPrice -= 5;
   }
   console.log(totalPrice);
-  // pass value to totalprice id specified in html
   $("#total-price").html(totalPrice);
 });
 
@@ -111,6 +99,12 @@ $("ul li:contains('gluten')").hide();
 $("ul li:contains('white')").hide();
 
 // Hide/display crust
+
+// Gijs example, for reference  :)
+
+// Set topping price to variable to add to totalprice (see line 115):
+// newPrice($(this), "pepperonni")
+//var price = parseInt($(`ul li:contains('pepperonni')`).html().slice(1,2));
 
 // function newPrice( $this, ingredient ){
 //   var price = parseInt($(`ul li:contains(${ingredient})`).html().slice(1,2));
