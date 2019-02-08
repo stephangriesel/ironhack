@@ -1,15 +1,4 @@
-$(document).ready(function(){
-  $(".sauce-white").hide();
-});
-
-// Write your Pizza Builder JavaScript in this file.
-
-// Iteration 1: Add and remove toppings
-// There are five buttons on the left of the pizza builder. Three of those have to add or remove toppings from the pizza. Write the JavaScript necessary for those three buttons to add and remove pepperonni, mushrooms and green peppers from the pizza. Don’t worry about updating the price. We will do it later.
-
-// Each individual topping has its own HTML element:
-
-
+// Buttons
 
 $(".btn-mushrooms").on("click", function() {
   $(".mushroom").toggle("mushroom")
@@ -27,7 +16,6 @@ $(".btn-green-peppers").on("click", function() {
   $(".green-pepper").toggle("green-pepper");
   console.log("hello greenpepper");
   $(this).toggleClass("active");
-  // $(this).closest("li").remove();
 });
 
 $(".btn-sauce").on("click", function() {
@@ -36,12 +24,8 @@ $(".btn-sauce").on("click", function() {
   console.log("hello whitesauce");
 });
 
-// $(document).ready(function(){
-//   $(".crust").removeClass("crust-gluten-free");
-//  });
-
  $(".btn-crust").on("click", function() {
-  $(".crust").toggle("crust-gluten-free");
+  $(".crust-gluten-free").toggle("crust-gluten-free");
   $(this).toggleClass("active");
   console.log("hello crust");
 });
@@ -51,7 +35,7 @@ $(".btn-sauce").on("click", function() {
 // Wait a minute… this pizza comes with white sauce and gluten-free crust by default! Since that is a ridiculous default setting, we need to fix this as fast as possible. The last two buttons on the left are supposed to handle special options for the sauce and crust of your pizza. Make it so regular sauce and crust are selected by default. Also write the JavaScript code that will let users select white sauce and gluten free crust if they want to choose them. Again, don’t worry about updating the price.
 
 $(".sauce-white").hide(); // this vs document ready on top?
-// $(".crust-gluten-free").hide();
+$(".crust-gluten-free").hide();
 
 // Iteration 3: Change the buttons’ state
 // Currently our pizza builder’s buttons look the same, no matter if the option is activateed or not. If you notice, all the buttons have an active class.
