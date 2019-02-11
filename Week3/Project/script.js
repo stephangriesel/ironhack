@@ -7,6 +7,7 @@
 const totalScore = 0;
 
 $(document).ready(function() {
+  // Button click events
   $("#start").click(function() {
     console.log("Start was clicked");
   });
@@ -18,4 +19,20 @@ $(document).ready(function() {
   $("#reset").click(function() {
     console.log("Reset was clicked");
   });
+
+  // Random time
+  function randTime (min,max) {
+      console.log("randtime test");
+  }
+  randTime();
+
+  // Random coverobject
+
+  function randObjectCover (character) {
+      console.log("coverobject test")
+  }
+  randObjectCover();
+
+
+
 });
