@@ -2,6 +2,7 @@
   const totalScore = $(".score");
   const cages = $(".cage");
   const kips = $(".kip");
+  let lastCage;
 
   // Button click events
   $("#start").click(function() {
@@ -27,7 +28,13 @@
   function randomCage(cages) {
     const idx = Math.floor(Math.random() * cages.length);
     const cage = cages[idx];
-    console.log(cage);
+    if(cage === lastCage){
+      console.log("same cage, moving on...");
+      return randomCage(cages);
+    }
+
+    lastCage = cage;
+    return cage;
   }
   
 // });
