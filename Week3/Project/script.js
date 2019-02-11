@@ -1,12 +1,8 @@
-// Notes to self:
-
-// `const` is a signal that the identifier won’t be reassigned.
-// `let`, is a signal that the variable may be reassigned
-// `var` is now the weakest signal available when you define a variable in JavaScript.
-
-const totalScore = 0;
-
 $(document).ready(function() {
+  const totalScore = $(".score");
+  const kipCages = $(".kipCage");
+  const kips = $(".kip");
+
   // Button click events
   $("#start").click(function() {
     console.log("Start was clicked");
@@ -21,18 +17,15 @@ $(document).ready(function() {
   });
 
   // Random time
-  function randTime (min,max) {
-      console.log("randtime test");
+  function randomTime(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
   }
-  randTime();
+  randomTime(5, 999);
 
-  // Random coverobject
-
-  function randObjectCover (character) {
-      console.log("coverobject test")
+  // Pick random cage
+  function randomCage(randomized) {
+    const randomIndex = Math.floor(Math.random() * randomized.length);
+    const cage = kipCages[randomIndex];
   }
-  randObjectCover();
-
-
-
+  randomCage(kipCages);
 });
