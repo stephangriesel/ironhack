@@ -1,6 +1,6 @@
-$(document).ready(function() {
+// $(document).ready(function() {
   const totalScore = $(".score");
-  const kipCages = $(".cage");
+  const cages = $(".cage");
   const kips = $(".kip");
 
   // Button click events
@@ -22,12 +22,12 @@ $(document).ready(function() {
   }
   console.log(randomTime(5, 999));
 
-  // Pick random cage
-  function randomCage(randomized) {
-    const randomIndex = Math.floor(Math.random() * randomized.length);
-    const cage = kipCages[randomIndex];
-    console.log(randomIndex);
-  }
-  randomCage(kipCages);
   
-});
+  // Random cage
+  function randomCage(cages) {
+    const idx = Math.floor(Math.random() * cages.length);
+    const cage = cages[idx];
+    console.log(cage);
+  }
+  
+// });
