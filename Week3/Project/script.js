@@ -1,6 +1,6 @@
 $(document).ready(function() {
   const totalScore = $(".score");
-  const kipCages = $(".kipCage");
+  const kipCages = $(".cage");
   const kips = $(".kip");
 
   // Button click events
@@ -20,12 +20,14 @@ $(document).ready(function() {
   function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
   }
-  randomTime(5, 999);
+  console.log(randomTime(5, 999));
 
   // Pick random cage
   function randomCage(randomized) {
     const randomIndex = Math.floor(Math.random() * randomized.length);
     const cage = kipCages[randomIndex];
+    console.log(randomIndex);
   }
   randomCage(kipCages);
+  
 });
