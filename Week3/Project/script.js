@@ -1,6 +1,5 @@
-// $(document).ready(function() {
+$(document).ready(function() {
   const totalScore = document.getElementById("score"); // issue again with jquery
-  const yourScore = document.getElementById("yourscore");
   const cages = $(".cage");
   const kips = document.querySelectorAll(".kip"); // could not get foreach working when using jquery syntax
   let lastCage; // Skip cage if same as previous
@@ -99,9 +98,6 @@
   })
 
   kips.forEach(kip => kip.addEventListener('click', whack)); // for loop
-  
-  // Custom cursor
-  $(".outside-wrapper").css({'cursor': 'url(hand.cur), default'}); 
-  
-  // });
+    
+  });
 
