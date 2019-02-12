@@ -77,7 +77,18 @@
   }
 
   $("#easy-btn").click(function(){
+    difficulty.min = 3000;
+    difficulty.max = 4000;
+  })
 
+  $("#medium-btn").click(function(){
+    difficulty.min = 1500;
+    difficulty.max = 2000;
+  })
+
+  $("#hard-btn").click(function(){
+    difficulty.min = 500;
+    difficulty.max = 900;
   })
 
   kips.forEach(kip => kip.addEventListener('click', whack)); // for loop
