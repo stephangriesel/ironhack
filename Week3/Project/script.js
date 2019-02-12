@@ -72,7 +72,7 @@ $(document).ready(function () {
     totalScore.textContent = score;
   }
 
-  // Explode kip 
+  // Explode kip - Not working, class not removing
   $(".kip").click(function(){
     $(this).toggleClass("kipExplode");
    })
