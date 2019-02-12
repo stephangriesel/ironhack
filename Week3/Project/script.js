@@ -1,9 +1,15 @@
 // $(document).ready(function() {
-  const totalScore = $(".score");
+  const totalScore = document.getElementById("score"); // issue again with jquery
+  const yourScore = document.getElementById("yourscore");
   const cages = $(".cage");
-  const kips = $(".kip");
+  const kips = document.querySelectorAll(".kip"); // could not get foreach working when using jquery syntax
   let lastCage; // Skip cage if same as previous
   let endGame = false; // If true game stops
+  let score = 0;
+  let difficulty = {
+    min:1000,
+    max:3000
+  }
 
   // Button click events
   $("#start").click(function() {
@@ -38,7 +44,8 @@
 
   // Show kip
   function popupKip() {
-    const time = randomTime(600,3000);
+    const time = randomTime(difficulty.min, difficulty.max);
+    console.log(time);
     const cage = randomCage(cages);
     // console.log(time, cage);
     cage.classList.add("show");
@@ -50,12 +57,29 @@
 
   // Begin game 
   function beginGame() {
-    totalScore.textContent = 0;
+    // totalScore.textContent = 0;
     endGame = false;
+    score = 0;
     popupKip();
     setTimeout(function() {
       endGame = true
     }, 10000)
   }
+
+  function whack(e) {
+    if(!e.isTrusted) return; // verify valid click
+    //console.log(e);
+    score++;
+    // remove kip if clicked
+    this.classList.remove("show");
+    totalScore.textContent = score;
+
+  }
+
+  $("#easy-btn").click(function(){
+
+  })
+
+  kips.forEach(kip => kip.addEventListener('click', whack)); // for loop
   
 // });
