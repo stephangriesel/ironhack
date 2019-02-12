@@ -66,6 +66,14 @@
     }, 10000)
   }
 
+  // Start game on spacebar keypress
+  window.onkeypress = function(event) {
+    if (event.keyCode == 32) {
+       beginGame();
+    }
+ }
+
+  // Whack kip and update score
   function whack(e) {
     if(!e.isTrusted) return; // verify valid click
     //console.log(e);
@@ -76,6 +84,7 @@
 
   }
 
+  // Difficulty buttons
   $("#easy-btn").click(function(){
     difficulty.min = 3000;
     difficulty.max = 4000;
@@ -94,3 +103,4 @@
   kips.forEach(kip => kip.addEventListener('click', whack)); // for loop
   
 // });
+
