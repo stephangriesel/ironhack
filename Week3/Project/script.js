@@ -16,14 +16,6 @@
     beginGame();
   });
 
-  $("#pause").click(function() {
-    console.log("Pause was clicked");
-  });
-
-  $("#reset").click(function() {
-    console.log("Reset was clicked");
-  });
-
   // Random time
   function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -81,26 +73,35 @@
     // remove kip if clicked
     this.classList.remove("show");
     totalScore.textContent = score;
-
   }
+
+  // Explode kip 
+  
+   
 
   // Difficulty buttons
   $("#easy-btn").click(function(){
+    $(".level-selected").html("Level Selected: Easy");
     difficulty.min = 3000;
     difficulty.max = 4000;
   })
 
   $("#medium-btn").click(function(){
+    $(".level-selected").html("Level Selected: Medium");
     difficulty.min = 1500;
     difficulty.max = 2000;
   })
 
   $("#hard-btn").click(function(){
+    $(".level-selected").html("Level Selected: Hard");
     difficulty.min = 500;
     difficulty.max = 900;
   })
 
   kips.forEach(kip => kip.addEventListener('click', whack)); // for loop
   
-// });
+  // Custom cursor
+  $(".outside-wrapper").css({'cursor': 'url(hand.cur), default'}); 
+  
+  // });
 
