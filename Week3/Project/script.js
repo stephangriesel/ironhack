@@ -3,10 +3,11 @@
   const cages = $(".cage");
   const kips = $(".kip");
   let lastCage; // Skip cage if same as previous
+  let endGame = false; // If true game stops
 
   // Button click events
   $("#start").click(function() {
-    popupKip();
+    beginGame();
   });
 
   $("#pause").click(function() {
@@ -43,8 +44,18 @@
     cage.classList.add("show");
     setTimeout(function() {
       cage.classList.remove("show");
-      popupKip();
+      if(!endGame) popupKip(); // if true game stops
     },time)
+  }
+
+  // Begin game 
+  function beginGame() {
+    totalScore.textContent = 0;
+    endGame = false;
+    popupKip();
+    setTimeout(function() {
+      endGame = true
+    }, 10000)
   }
   
 // });
