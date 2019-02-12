@@ -1,7 +1,7 @@
 // $(document).ready(function() {
-  const totalScore = document.querySelectorAll(".score");
-  const cages = document.querySelectorAll(".cage");
-  const kips = document.querySelectorAll(".kip");
+  const totalScore = $(".score");
+  const cages = $(".cage");
+  const kips = $(".kip");
   let lastCage; // Skip cage if same as previous
 
   // Button click events
