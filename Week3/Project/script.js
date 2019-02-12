@@ -6,7 +6,7 @@
 
   // Button click events
   $("#start").click(function() {
-    console.log("Start was clicked");
+    popupKip();
   });
 
   $("#pause").click(function() {
