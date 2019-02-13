@@ -1,11 +1,11 @@
-$(document).ready(function () {
+// $(document).ready(function () {
   const totalScore = document.getElementById("score"); // issue again with jquery
   const cages = document.querySelectorAll(".cage");
   const kips = document.querySelectorAll(".kip"); // could not get foreach working when using jquery syntax
-  let lastCage; // Skip cage if same as previous
-  let endGame = false; // If true game stops
-  let score = 0;
-  let difficulty = {
+  let lastCage; // skip cage if same as previous
+  let endGame = false; // ff true game stops
+  let score = 0; //
+  let difficulty = { // level difficulty, set minim
     min: 1000,
     max: 3000
   }
@@ -15,16 +15,37 @@ $(document).ready(function () {
     beginGame();
   });
 
-  // Random time
+  // Difficulty buttons
+  $("#easy-btn").click(function () {
+    $(".level-selected").html("Level Selected: Easy");
+    difficulty.min = 3000;
+    difficulty.max = 4000;
+  })
+
+  $("#medium-btn").click(function () {
+    $(".level-selected").html("Level Selected: Medium");
+    difficulty.min = 1500;
+    difficulty.max = 2000;
+  })
+
+  $("#hard-btn").click(function () {
+    $(".level-selected").html("Level Selected: Hard");
+    difficulty.min = 500;
+    difficulty.max = 900;
+  })
+
+  // Random time: min/max
   function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
   }
 
   // Random cage
   function randomCage(cages) {
-    const idx = Math.floor(Math.random() * cages.length);
-    const cage = cages[idx];
-    if (cage === lastCage) { // Skip cage if same as previous
+    console.log(cages.length); // nodelist with my 9 cages
+    const randomNumber = Math.floor(Math.random() * cages.length);
+    const cage = cages[randomNumber]; // random index number
+    console.log(cage); 
+    if (cage === lastCage) { // skip cage if same as previous
       console.log("same cage, moving on...");
       return randomCage(cages);
     }
@@ -35,8 +56,8 @@ $(document).ready(function () {
   // Show kip
   function popupKip() {
     const time = randomTime(difficulty.min, difficulty.max);
-    console.log(time);
     const cage = randomCage(cages);
+    console.log(time, cage);
     // console.log(time, cage);
     cage.classList.add("show");
     setTimeout(function () {
@@ -72,30 +93,16 @@ $(document).ready(function () {
     totalScore.textContent = score;
   }
 
-  // Explode kip - Not working, class not removing
-  $(".kip").click(function(){
+  // Explode kip - Not working, toggle not removing class, HELP!
+  $(".kip").click(function () {
     $(this).toggleClass("kipExplode");
-   })
-
-
-  // Difficulty buttons
-  $("#easy-btn").click(function () {
-    $(".level-selected").html("Level Selected: Easy");
-    difficulty.min = 3000;
-    difficulty.max = 4000;
   })
 
-  $("#medium-btn").click(function () {
-    $(".level-selected").html("Level Selected: Medium");
-    difficulty.min = 1500;
-    difficulty.max = 2000;
-  })
+  // setTimeout(function () {
+  //   cage.classList.remove("kipExplode");
 
-  $("#hard-btn").click(function () {
-    $(".level-selected").html("Level Selected: Hard");
-    difficulty.min = 500;
-    difficulty.max = 900;
-  })
+
+
 
   kips.forEach(kip => kip.addEventListener('click', whack)); // for loop
 
@@ -103,5 +110,5 @@ $(document).ready(function () {
 
   // }
 
-});
+// });
 
