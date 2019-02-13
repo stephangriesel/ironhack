@@ -69,6 +69,7 @@ function popupKip() {
 
 // Begin game 
 function beginGame() {
+  $("#countdown").html("10"); // set timer to 10 once game starts
   var seconds = document.getElementById("countdown").textContent; // game countdown start
   var countdown = setInterval(function () {
     seconds--;
