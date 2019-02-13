@@ -35,6 +35,11 @@ html {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-bottom:10px;
+}
+
+.totalScore {
+  margin:20px;
 }
 
 #score {
@@ -48,7 +53,6 @@ html {
 #countdown {
   border: solid 3px #000;
   border-radius: 20%;
-  padding:5px;
   font-size: 70px;
 }
 
@@ -63,6 +67,11 @@ html {
   cursor: pointer;
 }
 
+#easy-btn:hover {
+  transition: 0.5s ease-in-out;
+  background:rgb(80, 255, 27);
+}
+
 #medium-btn {
   color:#FFFFFF;
   background:rgb(185, 159, 44);
@@ -74,6 +83,11 @@ html {
   cursor: pointer;
 }
 
+#medium-btn:hover {
+  transition: 0.5s ease-in-out;
+  background:rgb(255, 219, 60);
+}
+
 #hard-btn {
   color:#FFFFFF;
   background:rgb(141, 46, 46);
@@ -83,6 +97,11 @@ html {
   border:none;
   outline:none;
   cursor: pointer;
+}
+
+#hard-btn:hover {
+  transition: 0.5s ease-in-out;
+  background:rgb(255, 60, 60);
 }
 
 .level-selected {
@@ -99,6 +118,11 @@ html {
   border:none;
   outline:none;
   cursor: pointer;
+}
+
+#start:hover {
+  transition: 0.5s ease-in-out;
+  background:rgb(80, 255, 27);
 }
 
 .hand {
