@@ -4,6 +4,7 @@ html {
   background-size: cover;
   margin: 0;
   padding: 0;
+  cursor: crosshair;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -127,10 +128,6 @@ html {
   background:rgb(80, 255, 27);
 }
 
-.hand {
-  cursor:url('../img/hand.png');
-}
-
 .controls {
   display: flex;
   flex-direction: row;
@@ -144,7 +141,6 @@ html {
   overflow: hidden;
   position: relative;
   border-radius:30%;
-  cursor:url('hand.png');
 }
 
 .cage:after {
@@ -231,7 +227,6 @@ html {
   padding:10px;
   border:none;
   outline:none;
-  cursor: pointer;
 }
 
 #duration-30:hover {
