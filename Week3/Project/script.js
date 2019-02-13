@@ -4,7 +4,7 @@ const cages = document.querySelectorAll(".cage");
 const kips = document.querySelectorAll(".kip"); // could not get foreach working when using jquery syntax
 let lastCage; // skip cage if same as previous
 let endGame = false; // if true game stops
-let score = 0; 
+let score = 0;
 let difficulty = { // level difficulty, set min/max
   min: 1000,
   max: 3000
@@ -33,6 +33,7 @@ $("#hard-btn").click(function () {
   difficulty.min = 500;
   difficulty.max = 900;
 })
+
 
 // Random time: min/max
 function randomTime(min, max) {
@@ -68,12 +69,18 @@ function popupKip() {
 
 // Begin game 
 function beginGame() {
+  var seconds = document.getElementById("countdown").textContent; // game countdown start
+  var countdown = setInterval(function () {
+    seconds--;
+    document.getElementById("countdown").textContent = seconds;
+    if (seconds <= 0) clearInterval(countdown);
+  }, 1000);
   endGame = false;
   score = 0;
   popupKip();
   setTimeout(function () {
     endGame = true
-  }, 10000)
+  }, 10000);
 }
 
 // Start game on spacebar keypress
@@ -94,14 +101,14 @@ function whack(e) {
   totalScore.textContent = score;
 }
 
-// Explode kip - Not working, toggle not removing class, HELP! I want to do this in vanilla JS.
+// Explode kip 
 $(".kip").click(function () {
   $(this).parent(".cage").removeClass("show");
   $(this).toggleClass("kipExplode");
   $(this).addClass("kipExplode");
-  setTimeout( ()=> {
+  setTimeout(() => {
     $(this).removeClass("kipExplode");
-  }, 1000 )
+  }, 1000)
 })
 
 // Loop through kips
