@@ -1,0 +1,156 @@
+body,
+html {
+  background: url("../img/bg.jpg") no-repeat center center fixed; 
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.outside-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.wrapper {
+
+  background: rgba(210,210,210,0.6);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 200px 200px 200px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  width: 700px;
+  height: 640px;
+  border-radius: 10%;
+  padding:20px;
+  margin-bottom:20px;
+}
+
+.centerAlign {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#score {
+  border: solid 3px #000;
+  border-radius: 20%;
+  padding:5px;
+  font-size: 70px;
+  margin:25px;
+}
+
+#countdown {
+  border: solid 3px #000;
+  border-radius: 20%;
+  padding:5px;
+  font-size: 70px;
+}
+
+#easy-btn {
+  color:#FFFFFF;
+  background:rgb(79, 163, 54);
+  font-size:18px;
+  font-weight:900;
+  padding:10px;
+  border:none;
+  outline:none;
+  cursor: pointer;
+}
+
+#medium-btn {
+  color:#FFFFFF;
+  background:rgb(185, 159, 44);
+  font-size:18px;
+  font-weight:900;
+  padding:10px;
+  border:none;
+  outline:none;
+  cursor: pointer;
+}
+
+#hard-btn {
+  color:#FFFFFF;
+  background:rgb(141, 46, 46);
+  font-size:18px;
+  font-weight:900;
+  padding:10px;
+  border:none;
+  outline:none;
+  cursor: pointer;
+}
+
+.level-selected {
+  padding:20px 0;
+  font-size:20px;
+}
+
+#start {
+  color:#FFFFFF;
+  background:rgb(79, 163, 54);
+  font-size:18px;
+  font-weight:900;
+  padding:10px;
+  border:none;
+  outline:none;
+  cursor: pointer;
+}
+
+.hand {
+  cursor:url('../img/hand.png');
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.cage {
+  background: url("../img/coop.png") center no-repeat;
+  overflow: hidden;
+  position: relative;
+  border-radius:30%;
+  cursor:url('hand.png');
+}
+
+.cage:after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: -30px;
+}
+
+.kip {
+  background: url("../img/kip.gif") bottom center no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.8s;
+}
+
+.kipExplode {
+  background: url("../img/explode.gif") bottom center no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cage.show .kip {
+  top: 0;
+}
+
+
