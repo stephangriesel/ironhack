@@ -1,4 +1,4 @@
-// $(document).ready(function () {
+// $(document).ready(function () { // My overlay does not work if this is enabled
 const totalScore = document.getElementById("score"); // issue again with jquery
 const cages = document.querySelectorAll(".cage");
 const kips = document.querySelectorAll(".kip"); // could not get foreach working when using jquery syntax
@@ -116,7 +116,7 @@ function popupKip() {
 // Begin game 
 function beginGame() {
   chicken.play();
-  $("#countdown").html("10"); // set timer to 10 once game starts
+  $("#countdown").html("20"); // set timer to 10 once game starts
   var seconds = document.getElementById("countdown").textContent; // game countdown start
   var countdown = setInterval(function () {
     seconds--;
@@ -128,7 +128,7 @@ function beginGame() {
   popupKip();
   setTimeout(function () {
     endGame = true
-  }, 10000);
+  }, 20000); // gameplay time
 }
 
 // Whack kip and update score
