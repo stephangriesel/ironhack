@@ -23,8 +23,8 @@ html {
   grid-template-rows: 200px 200px 200px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  width: 700px;
-  height: 640px;
+  width: 80%;
+  height: 100%;
   border-radius: 10%;
   padding:20px;
   margin-bottom:20px;
@@ -37,6 +37,18 @@ html {
   justify-content: center;
   align-items: center;
   margin-bottom:10px;
+}
+
+.centerAlignColumn {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:10px;
+}
+
+.centerAlignColumn button{
+  margin:5px;
 }
 
 #overlay {
