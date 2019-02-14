@@ -58,16 +58,12 @@ html {
   margin-bottom:10px;
 }
 
-.totalScore {
-  margin:20px;
-}
-
 #score {
+
   border: solid 3px #000;
   border-radius: 20%;
   padding:5px;
-  font-size: 70px;
-  margin:25px;
+  font-size: 30px;
 }
 
 #green {
