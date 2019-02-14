@@ -8,25 +8,6 @@ html {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#overlay {
-  /* border-radius: 20%; */
-  color:#FFFFFF;
-  position: fixed;
-  display: none;
-  width: 60%;
-  /* height: 20%; */
-  /* top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; */
-  margin:0 auto;
-  padding:20px;
-  background-color: rgba(0,0,0,0.8);
-  z-index: 2;
-  cursor: pointer;
-  transition: 2s ease-in-out;
-}
-
 .outside-wrapper {
   display: flex;
   flex-direction: column;
@@ -36,7 +17,6 @@ html {
 }
 
 .wrapper {
-
   background: rgba(210,210,210,0.6);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -48,6 +28,7 @@ html {
   border-radius: 10%;
   padding:20px;
   margin-bottom:20px;
+  cursor: url('../img/hand.png'), pointer;
 }
 
 .centerAlign {
@@ -58,16 +39,23 @@ html {
   margin-bottom:10px;
 }
 
-#score {
+#overlay {
+  color:#FFFFFF;
+  position: fixed;
+  display: none;
+  width: 60%;
+  margin:0 auto;
+  padding:20px;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 2;
+  cursor: pointer;
+}
 
+#score {
   border: solid 3px #000;
   border-radius: 20%;
   padding:5px;
   font-size: 30px;
-}
-
-#green {
-  background:rgb(79, 163, 54);
 }
 
 #easy-btn {
@@ -211,58 +199,4 @@ html {
   border: solid 3px #000;
   border-radius: 20%;
   font-size: 70px;
-}
-
-.duration {
-  margin:20px;
-}
-
-#duration-10 {
-  color:#FFFFFF;
-  background:rgb(116, 141, 46);
-  font-size:18px;
-  font-weight:900;
-  padding:10px;
-  border:none;
-  outline:none;
-  cursor: pointer;
-}
-
-#duration-10:hover {
-  transition: 0.5s ease-in-out;
-  color:#525252;
-  background:rgb(210, 255, 85);
-}
-
-#duration-20 {
-  color:#FFFFFF;
-  background:rgb(116, 141, 46);
-  font-size:18px;
-  font-weight:900;
-  padding:10px;
-  border:none;
-  outline:none;
-  cursor: pointer;
-}
-
-#duration-20:hover {
-  transition: 0.5s ease-in-out;
-  color:#525252;
-  background:rgb(210, 255, 85);
-}
-
-#duration-30 {
-  color:#FFFFFF;
-  background:rgb(116, 141, 46);
-  font-size:18px;
-  font-weight:900;
-  padding:10px;
-  border:none;
-  outline:none;
-}
-
-#duration-30:hover {
-  transition: 0.5s ease-in-out;
-  color:#525252;
-  background:rgb(210, 255, 85);
 }
