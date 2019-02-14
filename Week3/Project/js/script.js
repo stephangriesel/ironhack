@@ -15,7 +15,7 @@ let duration = { // set duration of game - coming in version 2 ;)
   thirty: 30
 }
 const chicken = new Audio('audio/chicken.mp3'); // Chicken sound when game starts, cuckalakoooooo!
-const slap = new Audio('audio/slap6.mp3'); // Slap sound when chicken whacked
+const slap = new Audio('audio/slap2.mp3'); // Slap sound when chicken whacked
 
 // Overlay level select
 function on() {
@@ -25,6 +25,14 @@ function on() {
 function off() {
   document.getElementById("overlay").style.display = "none";
 }
+
+// Scrolling titlebar - Cheesy titlebar scroll, thank you Stackoverflow
+(function titleScroller(text) {
+  document.title = text;
+  setTimeout(function () {
+      titleScroller(text.substr(1) + text.substr(0, 1));
+  }, 200);
+}("Whack-A-Kip - Whack-A-Kip - Whack-A-Kip - Whack-A-Kip "));
 
 // Start game on spacebar keypress
 window.onkeypress = function (event) {
