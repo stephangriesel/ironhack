@@ -98,6 +98,11 @@
     }, time)
   }
 
+  $('#wrapper').bind('click', function() {
+    $(this).unbind('click');
+    console.log('Clicked and unbound!');
+});
+  
   // Begin game 
   function beginGame() {
     chicken.play();
