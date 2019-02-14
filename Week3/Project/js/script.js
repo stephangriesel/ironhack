@@ -21,6 +21,15 @@
     beginGame();
   });
 
+  // Overlay 
+  function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
+
   // Difficulty buttons
   $("#easy-btn").click(function () {
     $(".level-selected").html("Level Selected: Easy");
