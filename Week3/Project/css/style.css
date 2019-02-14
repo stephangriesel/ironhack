@@ -23,7 +23,7 @@ html {
   grid-template-rows: 200px 200px 200px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  width: 80%;
+  width: 650px;
   height: 100%;
   border-radius: 10%;
   padding:20px;
@@ -128,19 +128,21 @@ html {
 
 #chooseLevel {
   color:#FFFFFF;
-  background:rgb(79, 163, 54);
+  background:rgb(57, 135, 224);
   font-size:18px;
   font-weight:900;
-  padding:10px;
+  padding:25px;
   border:none;
+  border-radius: 50%;
   outline:none;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 #chooseLevel:hover {
   color:#525252;
   transition: 0.5s ease-in-out;
-  background:rgb(80, 255, 27);
+  background:rgb(167, 167, 167);
 }
 
 #start {
@@ -212,3 +214,10 @@ html {
   border-radius: 20%;
   font-size: 70px;
 }
+
+@media (max-width:850px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
