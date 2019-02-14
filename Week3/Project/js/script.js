@@ -15,6 +15,7 @@ let duration = { // set duration of game - coming in version 2 ;)
   thirty: 30
 }
 const chicken = new Audio('audio/chicken.mp3'); // Chicken sound when game starts, cuckalakoooooo!
+const slap = new Audio('audio/slap2.mp3'); // Slap sound when chicken whacked
 
 // Overlay level select
 function on() {
@@ -124,6 +125,7 @@ function beginGame() {
 
 // Whack kip and update score
 function whack(e) {
+  slap.play();
   console.log(e); // log mouse event
   if (!e.isTrusted) return; // confirm trusted click
   score++;

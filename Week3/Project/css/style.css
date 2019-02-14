@@ -212,7 +212,7 @@ html {
 #countdown {
   border: solid 3px #000;
   border-radius: 20%;
-  font-size: 70px;
+  font-size: 40px;
 }
 
 @media (max-width:850px) {
