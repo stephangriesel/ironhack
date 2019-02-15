@@ -1,4 +1,6 @@
 // $(document).ready(function () { // My overlay does not work if this is enabled
+
+// VARIABLES
 const totalScore = document.getElementById("score"); // issue again with jquery
 const cages = document.querySelectorAll(".cage");
 const kips = document.querySelectorAll(".kip"); // could not get foreach working when using jquery syntax
@@ -17,16 +19,7 @@ let duration = { // set duration of game - coming in version 2 ;)
 const chicken = new Audio('audio/chicken.mp3'); // Chicken sound when game starts, cuckalakoooooo!
 const slap = new Audio('audio/slap2.mp3'); // Slap sound when chicken whacked
 
-// Overlay level select
-function on() {
-  document.getElementById("overlay").style.display = "block";
-}
-
-function off() {
-  document.getElementById("overlay").style.display = "none";
-}
-
-// Scrolling titlebar - Cheesy titlebar scroll, thank you Stackoverflow
+// SCROLLING TITLEBAR
 (function titleScroller(text) {
   document.title = text;
   setTimeout(function () {
@@ -34,14 +27,22 @@ function off() {
   }, 200);
 }("Whack-A-Kip - Whack-A-Kip - Whack-A-Kip - Whack-A-Kip "));
 
-// Start game on spacebar keypress
+// OVERLAY LEVEL SELECT
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+// KEYPRESS START GAME
 window.onkeypress = function (event) {
   if (event.keyCode == 32) {
     beginGame();
   }
 }
 
-// Difficulty buttons
+// CLICK EVENTS - DIFFICULTY BUTTONS
 $("#easy-btn").click(function () {
   $(".level-selected").html("Level Selected: Easy");
   difficulty.min = 3000;
@@ -60,12 +61,12 @@ $("#hard-btn").click(function () {
   difficulty.max = 900;
 })
 
-// Button click events
+// CLICK EVENTS - START BUTTON
 $("#start").click(function () {
   beginGame();
 });
 
-// Duration buttons - Coming in version 2 ;)
+// // CLICK EVENTS - DURATUTION BUTTONS - Coming in version 2 ;)
 $("#duration-10").click(function () {
   $("#countdown").html("10");
   duration.ten = 10;
@@ -81,12 +82,12 @@ $("#duration-30").click(function () {
   duration.thirty = 30;
 })
 
-// Random time: min/max
+// FUNCTION: Random time: min/max
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
-// Random cage
+// FUNCTION: Random cage
 function randomCage(cages) {
   console.log(cages.length); // nodelist cages
   const randomNumber = Math.floor(Math.random() * cages.length);
@@ -100,7 +101,7 @@ function randomCage(cages) {
   return cage;
 }
 
-// Show kip
+// FUNCTION: Show kip
 function popupKip() {
   const time = randomTime(difficulty.min, difficulty.max); // random time function get values from difficulty level buttons, default set to easy
   const cage = randomCage(cages); // random cage function selection for nodelist
@@ -109,11 +110,11 @@ function popupKip() {
   cage.classList.add("show");
   setTimeout(function () {
     cage.classList.remove("show");
-    if (!endGame) popupKip(); // if true game stops
+    if (!endGame) popupKip(); // variable defined, if TRUE game will stop
   }, time)
 }
 
-// Begin game 
+// FUNCTION: Begin game 
 function beginGame() {
   chicken.play();
   $("#countdown").html("20"); // set timer to 10 once game starts
@@ -131,22 +132,20 @@ function beginGame() {
   }, 20000); // gameplay time
 }
 
-// Whack kip and update score
+// FUNCTION: Whack kip and update score
 function whack(e) {
-  slap.play();
+  slap.play(); // slap sound when clicked
   console.log(e); // log mouse event
-  if (!e.isTrusted) return; // confirm trusted click
+  // if (!e.isTrusted) return; // confirm trusted click. removed for now
   score++;
-  // remove kip if clicked
-  // $(".cage").removeClass("show"); 
-  this.classList.remove("show");
+  // $(".cage").removeClass("show"); // issues with jquery, removed for now
+  this.classList.remove("show"); // remove kip if clicked
   totalScore.textContent = score;
 }
 
-// Explode kip 
+// FUNCTION: Explode kip 
 $(".kip").click(function () {
   $(this).parent(".cage").removeClass("show");
-  // $(this).toggleClass("kipExplode");
   $(this).addClass("kipExplode");
   setTimeout(() => {
     $(this).removeClass("kipExplode");
@@ -155,7 +154,7 @@ $(".kip").click(function () {
 
 // Loop through kips
 
-kips.forEach(kip => kip.addEventListener('click', whack));
+kips.forEach(kip => kip.addEventListener('click', whack)); // loop through dom. had issues when trying to use jquery when variable defined here. for my own reference: https://www.geeksforgeeks.org/javascript-array-foreach/
 
 // });
 
