@@ -19,7 +19,7 @@ let duration = { // set duration of game - coming in version 2 ;)
 const chicken = new Audio('audio/chicken.mp3'); // Chicken sound when game starts, cuckalakoooooo!
 const slap = new Audio('audio/slap2.mp3'); // Slap sound when chicken whacked
 
-// SCROLLING TITLEBAR
+// SCROLLING TITLEBAR - thank you Stackoverflow :)
 (function titleScroller(text) {
   document.title = text;
   setTimeout(function () {
@@ -136,11 +136,10 @@ function beginGame() {
 function whack(e) {
   slap.play(); // slap sound when clicked
   console.log(e); // log mouse event
-  // if (!e.isTrusted) return; // confirm trusted click. removed for now
-  score++;
+  score++; // increment score 
   // $(".cage").removeClass("show"); // issues with jquery, removed for now
   this.classList.remove("show"); // remove kip if clicked
-  totalScore.textContent = score;
+  totalScore.textContent = score; // your score update, for my own reference: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
 }
 
 // FUNCTION: Explode kip 
@@ -154,7 +153,7 @@ $(".kip").click(function () {
 
 // Loop through kips
 
-kips.forEach(kip => kip.addEventListener('click', whack)); // loop through dom. had issues when trying to use jquery when variable defined here. for my own reference: https://www.geeksforgeeks.org/javascript-array-foreach/
+kips.forEach(kip => kip.addEventListener('click', whack)); // loop through nodelist. had issues when trying to use jquery when variable defined here. for my own reference: https://www.geeksforgeeks.org/javascript-array-foreach/
 
 // });
 
