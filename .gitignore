@@ -3,3 +3,5 @@
 git submodule add https://github.com/ironhack-labs/lab-javascript-chronometer Week2/lab-javascript-chronometer
 
 /Week3/ideas.txt
+
+node_modules
