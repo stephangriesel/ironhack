@@ -3,8 +3,10 @@ const express = require('express');
 const hbs     = require('hbs');
 const app     = express();
 const path    = require('path');
-const PunkAPIWrapper = require('punkapi-javascript-wrapper');
-const punkAPI = new PunkAPIWrapper();
+const beers   = require('./beers.json');
+// console.log(beers);
+// const punkAPI = new PunkAPIWrapper();
+
 
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
@@ -19,7 +21,7 @@ app.get('/index', (req, res, next) => {
 
 app.get('/beers', (req, res, next) => {
 
-  res.render('beers');
+  res.render('beers', {beers: beers});
 });
 
 app.get('/randombeers', (req, res, next) => {
@@ -29,7 +31,7 @@ app.get('/randombeers', (req, res, next) => {
 
 app.listen(3020);
 
-console.log("hello from beers")
+console.log("hello from beers,listening on 3020")
 
 
 
