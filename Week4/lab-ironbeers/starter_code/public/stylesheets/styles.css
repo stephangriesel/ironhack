@@ -168,3 +168,15 @@ button {
 .randomBeerDiv {
     width:700px;
 }
+
+.flex-row-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img.beer-img {
+    width:110px;
+    height:300px;
+}
