@@ -20,18 +20,18 @@ app.get('/index', (req, res, next) => {
 });
 
 app.get('/beers', (req, res, next) => {
-
   res.render('beers', {beers: beers});
 });
 
 app.get('/randombeers', (req, res, next) => {
-
-  res.render('randombeers');
+  var randomBeer = beers[Math.floor(Math.random()*beers.length)];
+  console.log(randomBeer);
+  res.render('randombeers', {randomBeer});
 });
 
 app.listen(3020);
 
-console.log("hello from beers,listening on 3020")
+console.log("hello from beers,listening on 3020");
 
 
 

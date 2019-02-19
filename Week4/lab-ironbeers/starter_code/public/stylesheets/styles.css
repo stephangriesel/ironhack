@@ -76,8 +76,12 @@ footer {
     margin:5px;
     padding:10px;
     border-radius: 10px;
-    width:300px;
+    width:260px;
     height:100%;
+}
+
+.bold {
+    font-weight:900;
 }
 
 .img {
@@ -141,4 +145,26 @@ button {
     border-radius:10px;
     margin:10px;
     background-color: #2081C3;
+}
+
+.flex-row {
+    display:flex;
+    flex-direction: row;
+    width:80%;
+}
+
+.flex-row-image {
+    display:flex;
+    flex-direction: column;
+    width:50%;
+}
+
+.flex-row-text {
+    display:flex;
+    flex-direction: column;
+    width:50%;
+}
+
+.randomBeerDiv {
+    width:700px;
 }
