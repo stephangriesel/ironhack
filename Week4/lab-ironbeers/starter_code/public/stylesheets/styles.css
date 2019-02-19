@@ -72,11 +72,42 @@ footer {
 }
 
 .beer {
-    text-align: center;
-    border:1px solid #000;
+    border:1px solid rgb(185, 173, 173);
     margin:5px;
     padding:10px;
     border-radius: 10px;
+    width:300px;
+    height:100%;
+}
+
+.img {
+    text-align: center;
+}
+
+.text {
+    text-align: left;
+}
+
+.text h2 {
+    color:#000000;
+    margin-bottom:3px;
+}
+
+.tag{
+    font-size:14px;
+    margin:0;
+    padding:0;
+}
+
+.desc {
+    color:#000000;
+}
+
+.beer:hover {
+    color:#000000;
+    background:rgba(32,129,195,0.6);
+    transition:0.6s ease-in-out;
+    cursor: pointer;
 }
 
 .beer-list {
@@ -84,6 +115,8 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+
 
 .beer-img {
     width:50px;
