@@ -4,14 +4,14 @@ const mongoose = require('mongoose');
 const restaurantSchema = mongoose.Schema;
 
 // Connect to DB
-mongoose.connect('mongodb://localhost/restaurants', { useNewUrlParser: true } );
+mongoose.connect('mongodb://localhost:3000/restaurants', { useNewUrlParser: true } );
 
 // Verify connection
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  // we're connected!
-});
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   // we're connected!
+// });
 
 // Define schema
 // var restaurants = new mongoose.Schema({
