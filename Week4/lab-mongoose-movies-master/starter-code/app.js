@@ -26,7 +26,7 @@ const myCelebritySchema = new Schema({
 });
 
 // Compiling schema into a model
-const Celebrity = mongoose.model('Celebrity', mySchema);
+const Celebrity = mongoose.model('Celebrity', myCelebritySchema);
 
 // Create document
 var newCeleb = {
