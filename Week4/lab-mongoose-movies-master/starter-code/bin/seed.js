@@ -6,7 +6,7 @@
 var newCeleb = {
     name: "Daffy", 
     occupation: "Bleh", 
-    catchPhrase: "Can I also use ...?"
+    catchPhrase: "What what what"
 }
 Celebrity.create(newCeleb, (err)=> {
 })
