@@ -1,11 +1,19 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const mongoose = require('mongoose');
+const hbs     = require('hbs');
+
+// Handlebar Views
+app.set("view engine", "hbs");
+app.set("views", __dirname +  "/views");
+
+// Handlebars register celebrities view
+hbs.registerPartials(__dirname + "/views/celebrities");
 
 // Connect database
 mongoose.connect('mongodb://localhost/moviesApp', { useNewUrlParser: true }, function (err) {
     if (err) console.log("ERROR ERROR", err)
-    else console.log("Connected to port3000") // Research port variable
+    else console.log("Connected to port3000") 
 });
 
 const port = app.listen(3000);
@@ -13,7 +21,18 @@ const port = app.listen(3000);
 // Routes
 app.get('/', function (req, res) {
   res.send( 'Test')
-})
+});
+
+app.get("/celebrities" , (req, res) => {
+  res.render('celebrities', {});
+});
+
+
+// const celebritiesRoute = require("./routes/celebritiesRoute.js");
+
+// app.use("/celebrities", celebritiesRoute )
+
+// Iteration #1: The Celebrity Model
 
 // Create schema
 const Schema = mongoose.Schema;
@@ -28,13 +47,18 @@ const myCelebritySchema = new Schema({
 // Compiling schema into a model
 const Celebrity = mongoose.model('Celebrity', myCelebritySchema);
 
-// Create document
+// Create document 
 var newCeleb = {
-  name: "Daffy", 
-  occupation: "Bleh", 
-  catchPhrase: "What what what"
+  name: "Mickey", 
+  occupation: "Not sure", 
+  catchPhrase: "Aaaaaah"
 }
 Celebrity.create(newCeleb, (err)=> {
 })
 
-
+// Call model with find method
+Celebrity.find(function (err, newCeleb) {
+  if (err) return console.error(err);
+  console.log(newCeleb);
+  // res.render('Celebrity', name);
+})
