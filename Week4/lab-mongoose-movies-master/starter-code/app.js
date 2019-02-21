@@ -24,15 +24,20 @@ app.get('/', function (req, res) {
 });
 
 app.get("/celebrities" , (req, res) => {
-  res.render('celebrities', {});
+  // Call model with find method
+  Celebrity.find({},function (err, newCeleb) {
+    var celebResult = [];
+    if (err) return console.error(err);
+    console.log(newCeleb);
+    res.render('index', {celebs: newCeleb});
+  })
+
 });
 
 
 // const celebritiesRoute = require("./routes/celebritiesRoute.js");
 
 // app.use("/celebrities", celebritiesRoute )
-
-// Iteration #1: The Celebrity Model
 
 // Create schema
 const Schema = mongoose.Schema;
@@ -56,9 +61,3 @@ var newCeleb = {
 Celebrity.create(newCeleb, (err)=> {
 })
 
-// Call model with find method
-Celebrity.find(function (err, newCeleb) {
-  if (err) return console.error(err);
-  console.log(newCeleb);
-  // res.render('Celebrity', name);
-})
