@@ -55,7 +55,7 @@ const Celebrity = mongoose.model('Celebrity', myCelebritySchema);
 // Create document 
 var newCeleb = {
   name: "Mickey", 
-  occupation: "Not sure", 
+  occupation: "Hallo Belinda", 
   catchPhrase: "Aaaaaah"
 }
 Celebrity.create(newCeleb, (err)=> {
