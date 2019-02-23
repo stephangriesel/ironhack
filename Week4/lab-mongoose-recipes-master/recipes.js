@@ -36,7 +36,7 @@ var recipeSchema = new mongoose.Schema({
 });
 
 // Set up model
-var Recipe = mongoose.model('Recipe', recipeSchema);
+var Recipe = mongoose.model('recipeCollection', recipeSchema); // Noticed recipeCollection changed to recipeCollections in Compas
 
 var macAndCheeseAgain = new Recipe ({
   title: 'Mac and Cheese Again',
