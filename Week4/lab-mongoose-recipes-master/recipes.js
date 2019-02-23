@@ -1,7 +1,11 @@
+// Iteration 1: Create schema DONE
+// Iteration 2: Create recipe DONE
+// Iteration 3: 
+
 const mongoose = require('mongoose');
 const express = require("express")
 const app = express()
-// const recipeSchema   = mongoose.Schema;
+const Schema = mongoose.Schema;
 const data = require('./data.js');
 
 
@@ -13,45 +17,44 @@ mongoose.connect('mongodb://localhost/recipeApp')
     console.error('Error connecting to mongo', err);
   });
 
-  app.get("/", (req, res)=> {
-    res.send("Test");
-    // test.find({place: true }, (err, test)=> {
+// Routes
+app.get('/', function (req, res) {
+  res.send('Test2')
+});
 
-    //     if(err) res.send(error)
-    //     else res.render("test", {test})
-    // })
+// Set up schema
+var recipeSchema = new mongoose.Schema({
+  title: String,
+  level: String,
+  ingredients: Array,
+  cuisine: String,
+  dishType: String,
+  image: String,
+  duration: Number,
+  creator: String,
+  created: Date
+});
 
-  })
+// Set up model
+var Recipe = mongoose.model('Recipe', recipeSchema);
 
-  // Set up schema
-  var recipeSchema = new mongoose.Schema({
-    title: String,
-    level: String,
-    ingredients: Array,
-    cuisine: String,
-    dishType: String,
-    image: String,
-    duration: Number,
-    creator: String,
-    created: Date
-  });
+var macAndCheeseAgain = new Recipe ({
+  title: 'Mac and Cheese Again',
+  level: 'Easy Peasy',
+  ingredients: ["macoroni", "cheese", "milk", "eggs"],
+  cuisine: 'American',
+  dishType: 'Comfort',
+  image: 'img/maccheese.jpeg',
+  duration: 30,
+  creator: 'Adam & Eve',
+  created: 'Year 0',
+});
 
-  // Set up model
-  var Recipe = mongoose.model('recipeCollection', recipeSchema);
+Recipe.create(macAndCheeseAgain, (err) => {
+  // console.log("recipe not added")
+})
+console.log(macAndCheeseAgain.title);
 
-  var macAndCheese = new Recipe({ 
-    title: 'Mac and Cheese', 
-    level: 'Easy Peasy', 
-    ingredients: ["macoroni", "cheese", "milk", "eggs"], 
-    cuisine: 'American', 
-    dishType: 'Comfort', 
-    image: 'img/maccheese.jpeg', 
-    duration: 30 + "min", 
-    creator: 'Adam & Eve', 
-    created: 'Year 0', 
-  });
-  console.log(macAndCheese.title); 
-
-  app.listen(3010, ()=> {
-    console.log("Listening")
+app.listen(3010, () => {
+  console.log("Listening")
 });
