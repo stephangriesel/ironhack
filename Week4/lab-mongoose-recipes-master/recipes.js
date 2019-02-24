@@ -1,12 +1,12 @@
 // Iteration 1: Create schema DONE
 // Iteration 2: Create recipe DONE
-// Iteration 3: 
+// Iteration 3: Insert many DONE
 
 const mongoose = require('mongoose');
-const express = require("express")
-const app = express()
+const express = require("express");
+const app = express();
 const Schema = mongoose.Schema;
-const data = require('./data.js');
+const data = require('./data');
 
 
 // Connect to server
@@ -36,24 +36,35 @@ var recipeSchema = new mongoose.Schema({
 });
 
 // Set up model
-var Recipe = mongoose.model('recipeCollection', recipeSchema); // Noticed recipeCollection changed to recipeCollections in Compas
+var Recipe = mongoose.model('recipeSaved', recipeSchema); 
 
-var macAndCheeseAgain = new Recipe ({
-  title: 'Mac and Cheese Again',
-  level: 'Easy Peasy',
-  ingredients: ["macoroni", "cheese", "milk", "eggs"],
-  cuisine: 'American',
-  dishType: 'Comfort',
-  image: 'img/maccheese.jpeg',
-  duration: 30,
-  creator: 'Adam & Eve',
-  created: 'Year 0',
+// Insert one recipe
+
+// var createRecipe = new Recipe(
+//   {
+//     title: 'Fish and chips',
+//     level: 'Easy Peasy',
+//     ingredients: ["fish", "potatoes", "ketchup"],
+//     cuisine: 'English',
+//     dishType: 'Comfort',
+//     image: 'img/maccheese.jpeg',
+//     duration: 30,
+//     creator: 'Viking',
+//     created: '1200',
+//   }
+// );
+
+// Recipe.create(createRecipe, (err) => {
+//   console.log("recipe added")
+// })
+
+// Insert Many
+Recipe.insertMany(data, (err) => {
+  console.log();
 });
 
-Recipe.create(macAndCheeseAgain, (err) => {
-  // console.log("recipe not added")
-})
-console.log(macAndCheeseAgain.title);
+
+
 
 app.listen(3010, () => {
   console.log("Listening")
