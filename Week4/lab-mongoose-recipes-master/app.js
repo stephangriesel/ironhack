@@ -82,6 +82,22 @@ Recipe.insertMany(data, (err) => {
   console.log();
 })
 
+// Find one by ID
+app.get("/recipes/:id", function(req,res) {
+  console.log("retrieve one recipe");
+  Recipe.findOne({
+    _id: req.params.id
+  })
+  .exec(function(err, results){
+    if(err){
+      res.send("error");
+    } else {
+      console.log(results);
+      res.json(results);
+    }
+  })
+})
+
 // Update
 // Recipe.findByIdAndUpdate(id, { _id: "5c7298acbd9e9f34addfb47c",})
 
