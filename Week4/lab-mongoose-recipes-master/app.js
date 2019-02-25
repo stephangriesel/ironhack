@@ -98,7 +98,36 @@ app.get("/recipes/:id", function(req,res) {
   })
 })
 
-// Update
-// Recipe.findByIdAndUpdate(id, { _id: "5c7298acbd9e9f34addfb47c",})
+// Update Recipe
+// Recipe to be updated id: 5c7386ddc2b5b134713b5542
+app.put("/recipes/:id", function(req,res){
+  Recipe.findOneAndUpdate({
+    _id: req.params.id //query: example: A.findOneAndUpdate(conditions, update, options, callback) // executes
+  }, 
+  {$set: { duration:req.duration }}, 
+    { upsert:true }, // options
+    function(err, newDuration){ // callback
+      if(err) {
+        console.log("error");
+      } else {
+        console.log(newDuration);
+        res.status(204);
+      }
+  });
+});
+
+// Delete Recipe 
+app.delete("/recipes/:id", function(req,res) {
+  Recipe.findOneAndRemove({
+    _id: req.params.id
+  }, function(err, recipe){
+    if(err) {
+      res.send("error");
+    } else {
+      console.log(recipe);
+      res.status(204);
+    }
+  });
+});
 
 
