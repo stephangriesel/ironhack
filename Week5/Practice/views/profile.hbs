@@ -1,21 +1,5 @@
-<h1>Hello, this is your profile page</h1>
-<h3>Login below:</h3>
+<h1>Hello, {{email}} this is your profile page</h1>
 
-<form action="/login" method="POST" id="form">
+<img src="https://media.giphy.com/media/NS7gPxeumewkWDOIxi/giphy.gif" alt="">
 
-  <label for="username">Username</label>
-  <input type="text" name="username">
-
-  <label for="password">Password</label>
-  <input type="password" name="password">
-
-  {{#if errorMessage }}
-    <div class="error-message">{{ errorMessage }}</div>
-  {{/if}}
-
-  <button>Sign in</button>
-
-  <p class="account-message">
-    Don't have an account? <a href="/signup">Sign up</a>
-  </p>
-</form>
+<h1><a href="logout">Logout</a></h1>

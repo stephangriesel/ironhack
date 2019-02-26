@@ -48,9 +48,9 @@ router.post("/signup", (req, res) => {
 //Login
 router.get('/login', (req, res) => {
   if (req.signedCookies && req.signedCookies.email) {
-    res.redirect('/profile')
+    res.render('profile') // ('profile', {email:req.signedCookies.email})
   } else {
-    res.render('login.hbs')
+    res.render('login')// res.render('profile.hbs', {notFound: "USER HAS NOT BEEN FOUND"})
   }
 })
 
@@ -80,6 +80,13 @@ router.get('/profile', (req, res) => {
       res.redirect('login')
     }
   })
+})
+
+// Logout
+
+router.get('logout', (req, res) => {
+  res.clearCookie('email');
+  res.redirect('/');
 })
 
 

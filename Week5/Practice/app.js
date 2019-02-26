@@ -1,7 +1,7 @@
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var mongoose = require('mongoose');
-var port = 3018;
+var port = 3200;
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var path = require("path");
@@ -33,6 +33,10 @@ router.get("/signup", (req, res) => {
 
 router.get("/login", (req, res) => {
   res.render("login")
+});
+
+router.get("/logout", (req, res) => {
+  res.render("logout")
 });
 
 // HBS
