@@ -1,7 +1,7 @@
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var mongoose = require('mongoose');
-var port = 3010;
+var port = 3018;
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var path = require("path");
@@ -14,6 +14,9 @@ mongoose.connect('mongodb://localhost/authPract')
   }).catch(err => {
     console.error('Error connecting to mongo', err);
   });
+
+// Cookie Parser
+app.use(cookieParser("this-is-a-secret"));
 
 // Define auth route
 var router = require('./routes/auth');
@@ -40,9 +43,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Parser 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-// Cookie Parser
-app.use(cookieParser());
 
 // App Listen
 app.listen(port, () => {
