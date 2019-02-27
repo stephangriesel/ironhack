@@ -1,59 +1,99 @@
-const coinInfo = axios.create({
-    baseURL: `https://api.coindesk.com/v1/bpi/historical/close.json`
-});
+$("#get-data").click(() => {
+    start = $("#start").val();
+    end = $("#end").val();
+    currency = $("#currency").val()
 
-coinInfo.get()
-    .then(response => {
-        console.log(response);
-        var key = '';
-        var value = '';
-        for ([key, value] of Object.entries(response.data.bpi)) {
-            $('#coinResult').append(`<br>Date: ${key} <br> Price: ${value} <br>`);
-        }
+    axios.get(`https://api.coindesk.com/v1/bpi/historical/close.json?currency=${currency}&start=${start}&end=${end}`)
+    .then(result => {
+        // console.log(result.data.bpi)
+        allData = result.data.bpi
+        dates = Object.keys(allData)
+        value = Object.values(allData)
 
+        $("#min").html(`Min value ${currency}` + Math.max.apply(Math, value));
+        $("#max").html(`Min value ${currency}` + Math.max.apply(Math, value))
+
+        updateChart(dates, value)
     })
-    .catch(error => {
-        console.log(error);
-    });
+})
 
+function updateChart (dates, value) {
+    var ctx = $("#myChart");
 
-// My chart
-
-
-var ctx = document.getElementById("myChart").getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
+    myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+            labels: dates,
+            datasets: [{
+                label: "label",
+                data: value,
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                borderWidth: 1
             }]
+        },
+        options: {
+            elements: {
+                line: {
+                    tension: 0
+                }
+            },
+            responsive: true,
+            scales: [{
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }]
+            }]
+
         }
-    }
-});
+    });
+}
+
+
+
+// const coinInfo = axios.create({
+//     baseURL: `https://api.coindesk.com/v1/bpi/historical/close.json?`
+// });
+
+// // var stockLabels = [];
+// // var stockPrice = [];
+
+// // coinInfo.get()
+// //     .then(dataKey => {
+// //         console.log(dataKey);
+// //         printTheChart(dataKey.data)
+// //         var key = '';
+// //         var value = '';
+// //         for ([key, value] of Object.entries(dataKey.data.bpi)) {
+// //             stockLabels.push(key);
+// //             stockPrice.push(value);
+// //         }
+
+// //     })
+// //     .catch(error => {
+// //         console.log(error);
+// //     });
+
+// // ;
+
+
+// // // My chart
+
+// // const printTheChart = (stockData => {
+// //     const ctx = document.getElementById("myChart").getContext('2d');
+
+// //     const chart = new Chart(ctx, {
+// //         type: 'line',
+// //         data: {
+// //             labels: stockLabels,
+// //             datasets: [{
+// //                 label: "Stock Chart",
+// //                 backgroundColor: 'rgb(255, 99, 132)',
+// //                 borderColor: 'rgb(255, 99, 132)',
+// //                 data: stockPrice,
+// //             }]
+// //         }
+// //     });
+// // });

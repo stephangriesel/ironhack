@@ -3,28 +3,37 @@
   <head>
     <title> {{title}} </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   </head>
   <body>
     <h1> {{title}} </h1>
     <p>Welcome to  {{title}} </p>
-  </body>
-  <div id="displayStatus"></div>
-    <canvas id="myChart"></canvas>
-
+   
     <main class="main">
-        <div class="content-main">
-            <div id="text-block">Make selection</div>
-            <form>
-                <input type="text" id="start" required>
-                <br>
-                <input type="text" id="end" required>
-                <button id="submit">Submit</button>
-            </form>
-        </div>
-        <div id="coinResult"></div>
+
+  
+      <label for="start">From</label>
+      <input type="date" id="start">
+      <br>
+      <label for="end">To</label>
+      <input type="date" id="end">
+      <button id="get-data">Submit</button>
+    
+      <div>
+        <p id="min"></p>
+        <p id="max"></p>
+      </div>
+      <select name="currency" id="currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+      </select>
+
+      <canvas id="myChart"></canvas>
+
+    
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script src="/javascripts/financial-data.js" charset="utf-8"></script>
 </html>
