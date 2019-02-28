@@ -27,8 +27,8 @@ function updateChart (dates, value) {
             datasets: [{
                 label: "label",
                 data: value,
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgb(144,144,201)',
+                borderColor: 'rgb(0,0,255)',
                 borderWidth: 1
             }]
         },
@@ -51,7 +51,7 @@ function updateChart (dates, value) {
     });
 }
 
-
+// Old approach
 
 // const coinInfo = axios.create({
 //     baseURL: `https://api.coindesk.com/v1/bpi/historical/close.json?`
