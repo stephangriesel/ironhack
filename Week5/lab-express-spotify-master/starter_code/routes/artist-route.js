@@ -17,14 +17,4 @@ router.get('/artists', (req, res) => {
     })
 })
 
-// router.post('/artists', (req, res) => {
-//     let artist = req.body.artist;
-//     spotifyApi.searchArtists(artist)
-//     .then(data => {
-//         res.redirect('/artist', {displayArtist: data})
-//     });
-// })
-
-
-
 module.exports = router;

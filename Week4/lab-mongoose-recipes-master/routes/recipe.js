@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
-const Recipe = require("../models/Recipe.model"); // modular approach
+const Recipe = require("../models/Recipe.model"); 
 
 // get recipe route
 router.get('/recipes', (req, res) => {
