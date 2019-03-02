@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 const books = require('./books.json');
 var express = require('express');
 var app = express();
+const router = express.Router()
 const port = 3050;
-
+const Book = require('./models/book');
 
 // Routes
 
@@ -13,33 +14,22 @@ app.get('/', function (req, res) {
 })
 
 // --> Books Route
-// router.get('/books', (req, res, next) => {
+router.get('/books', (req, res, next) => {
 
-// });
+});
 
 // Connect
 mongoose.connect('mongodb://localhost/booksPractice');
 
-const Book = mongoose.model('books', {
-    author: String,
-    country: String,
-    imageLink: String,
-    language: String,
-    link: String,
-    pages: Number,
-    title: String,
-    year: Number
-});
-
 const newBook = new Book({
-    author: "Test2",
-    country: "Testville2",
-    imageLink: "Testing Image2",
-    language: "eWena Test2",
-    link: "www.test.com2",
-    pages: 1232,
-    title: "The Test2",
-    year: 2005
+    author: "Test3",
+    country: "Testville3",
+    imageLink: "Testing Image3",
+    language: "eWena Test3",
+    link: "www.test.com3",
+    pages: 12323,
+    title: "The Test4",
+    year: 2012
 });
 
 newBook.save((err) => {

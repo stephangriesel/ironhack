@@ -1,9 +1,11 @@
+const express = require('express');
+const app = express();
+const router = express.Router()
 const mongoose = require('mongoose');
-const books = require('./books.json');
-var express = require('express');
-var app = express();
+const Schema = mongoose.Schema;
 
-const Book = mongoose.model('books', {
+const BookSchema = new Schema( 
+    {
     author: String,
     country: String,
     imageLink: String,
@@ -12,7 +14,7 @@ const Book = mongoose.model('books', {
     pages: Number,
     title: String,
     year: Number
-});
+}
+);
 
-//Export model
-module.exports = mongoose.model('Book', AuthorSchema);
+module.exports = mongoose.model('Book', BookSchema);
