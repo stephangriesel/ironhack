@@ -61,6 +61,40 @@ router.get('/books/edit', (req, res, next) => {
     })
   });
 
+  // Update the book
+  router.post('/books/edit', (req, res, next) => {
+    const {
+        author,
+        country,
+        imageLink,
+        language,
+        link,
+        pages,
+        title,
+        year
+    } = req.body;
+    Book.update({_id: req.query.book_id}, { $set: 
+        {
+            author,
+            country,
+            imageLink,
+            language,
+            link,
+            pages,
+            title,
+            year
+        }
+    }, 
+    { new: true }
+    )
+    .then((book) => {
+      res.redirect('/books');
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  });
+
 // Book.find({}, (err, books) => {
 //     books.forEach((book) => {
 //         console.log(" --> book: ", book.title);
