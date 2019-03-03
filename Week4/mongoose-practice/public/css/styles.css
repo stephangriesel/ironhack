@@ -1,0 +1,13 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.edit-button {
+    margin-left:20px; 
+    color: #fff;
+    text-decoration: none;
+    padding: 2px 4px;
+    background-color: grey;
+    border-radius: 6px;
+  }

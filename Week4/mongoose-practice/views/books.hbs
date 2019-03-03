@@ -2,7 +2,7 @@
 {{#each books}}
 <hr>
     <p><a href="book/{{this._id}}">{{this.title}}</a></p>
-    <p><a href="book/{{this._id}}">{{this.country}}</a></p>
+    <a href="/books/edit?book_id={{this._id}}" class="edit-button">EDIT</a>
     <p><img src="{{imageLink}}" /></p>
 <hr>
 {{/each}}

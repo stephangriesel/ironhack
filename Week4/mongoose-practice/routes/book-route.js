@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+// Get the books
 router.get('/books', (req, res) => {
     Book.find()
         .then(books => {
@@ -11,6 +12,7 @@ router.get('/books', (req, res) => {
         })
 });
 
+// Add book
 router.get("/books/add", (req, res, next) => {
     res.render("book-add")
 });
@@ -47,6 +49,17 @@ router.post('/books/add', (req, res, next) => {
         })
 
 });
+
+// Edit the book
+router.get('/books/edit', (req, res, next) => {
+    Book.findOne({_id: req.query.book_id}) // We need the req.query object to get the id of the book and then query the database asking for all the info about it.
+    .then((book) => {
+      res.render("book-edit", {book});
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  });
 
 // Book.find({}, (err, books) => {
 //     books.forEach((book) => {
