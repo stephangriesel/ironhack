@@ -1,10 +1,17 @@
 <h1>BOOKS</h1>
 {{#each books}}
-<hr>
-<p><a href="book/{{this._id}}">{{this.title}}</a></p>
-<a href="/books/edit?book_id={{this._id}}" class="edit-button">EDIT</a>
-<a href="/books/remove?book_id={{this._id}}" class="remove-button">DELETE</a>
-
-<p><img src="{{imageLink}}" /></p>
-<hr>
+<div class="item-wrapper-outside">
+    <div class="item-wrapper-inside">
+        <div class="item-img">
+            <img src="{{imageLink}}" />
+        </div>
+        <h2>
+            <a href="book/{{this._id}}">{{this.title}}</a>
+        </h2>
+        <div class="buttons">
+            <a href="/books/edit?book_id={{this._id}}" class="edit-button">EDIT</a>
+            <a href="/books/remove?book_id={{this._id}}" class="remove-button">DELETE</a>
+        </div>
+    </div>
+</div>
 {{/each}}

@@ -3,6 +3,25 @@ body {
 
 }
 
+.item-wrapper-outside {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    float:left;
+}
+
+.item-wrapper-inside {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #202020;
+    border-radius: 10px;
+    padding:20px;
+    margin:20px;
+}
+
 .edit-button {
     margin-left:20px; 
     color: #fff;
@@ -12,11 +31,15 @@ body {
     border-radius: 6px;
   }
 
-  .edit-button {
+  .remove-button {
     margin-left:20px; 
     color: #fff;
     text-decoration: none;
     padding: 2px 4px;
     background-color: rgb(121, 41, 41);
     border-radius: 6px;
+  }
+
+img {
+      width:250px;
   }
