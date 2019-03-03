@@ -20,6 +20,8 @@ body {
     border-radius: 10px;
     padding:20px;
     margin:20px;
+    width:220px;
+    height:450px;
 }
 
 .edit-button {
@@ -41,5 +43,5 @@ body {
   }
 
 img {
-      width:250px;
+      width:200px;
   }
