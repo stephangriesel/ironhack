@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const books = require('./books.json');
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 const port = 3050;
 const Book = require('./models/book');
@@ -15,8 +16,13 @@ app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
+// Middleware bodyParser logic
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
+// Routes
 // --> Books Route
 const bookRoute = require('./routes/book-route')
 app.use('/', bookRoute);
