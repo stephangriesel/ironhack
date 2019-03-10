@@ -1,0 +1,31 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+input {
+  border:none;
+  background: #cfcbcb;
+  padding:10px;
+  font-size:18px;
+  margin:5px;
+  outline:none;
+}
+
+button {
+  border: none;
+  background: #00B7FF;
+  font-size: 18px;
+  padding:10px;
+}
+
+select {
+  border: none;
+  background: #00B7FF;
+  font-size: 18px;
+  padding:10px;
+}

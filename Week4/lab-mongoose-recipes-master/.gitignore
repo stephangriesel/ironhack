@@ -1,4 +1,8 @@
 # Dependency directory
 node_modules
+<<<<<<< HEAD
 notes.txt
 resources
+=======
+notes.txt
+>>>>>>> 8929f28f206415e53fc557d3aa876e41546f1491
