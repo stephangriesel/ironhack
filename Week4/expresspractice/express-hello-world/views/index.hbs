@@ -1,0 +1,40 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My first view</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+  <h1>Ironhacker Be Like</h1>
+  <img src="https://media.giphy.com/media/l0MYEqEzwMWFCg8rm/giphy.gif">
+</body> --}}
+
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+</head>
+<body>
+  <h1>Hello {{name}}!</h1>
+  <p>Welcome to the {{bootcamp}}!!</p>
+</body>
+</html> --}}
+
+{{!-- <h1>Hello {{name}}!</h1>
+{{#if lastName}}
+    <h2>This won't be displayed!!</h2>
+{{/if}} --}}
+
+{{!-- <h1>Hello {{name}} {{lastName}}!</h1>
+{{#if lastName}}
+    <h2>This will be displayed!!</h2>
+{{/if}} --}}
+
+<h1>Hello {{name}} {{lastName}}!</h1>
+{{#if address}}
+    <h2>This won't be displayed!!</h2>
+{{else}}
+  <h2>This will be displayed because the "address" property does not exists!!</h2>
+{{/if}}

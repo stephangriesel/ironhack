@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bitcoin Prices</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<body>
+    <div id="displayStatus"></div>
+    <canvas id="myChart"></canvas>
+
+    <main class="main">
+        <div class="content-main">
+            <div id="text-block">Make selection</div>
+            <form>
+                <input type="text" id="start" required>
+                <br>
+                <input type="text" id="end" required>
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+        <div id="coinResult"></div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

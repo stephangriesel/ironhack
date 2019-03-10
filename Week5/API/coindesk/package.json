@@ -1,17 +1,16 @@
 {
-  "name": "lab-mongoose-recipes",
+  "name": "coindesk",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "hbs": "^4.0.2",
-    "mongoose": "^5.4.15"
+    "axios": "^0.18.0",
+    "chart.js": "^2.7.3"
   }
 }
