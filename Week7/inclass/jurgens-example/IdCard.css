@@ -1,0 +1,22 @@
+.IdCard {
+    width: 98%;
+    border: solid black 2px;
+    height: 200px;
+    margin: 5px auto;
+}
+
+.IdCard img {
+    float: left;
+    height: 100%;
+}
+
+.IdCard .text-wrap {
+    padding-left: 5px; 
+    text-align: left;
+    float: left;
+    height: 100%;
+}
+
+.IdCard .bold {
+    font-weight: bold;
+}

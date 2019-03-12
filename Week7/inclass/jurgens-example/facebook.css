@@ -1,0 +1,22 @@
+.facebook {
+    width: 98%;
+    border: solid black 2px;
+    height: 200px;
+    margin: 5px auto;
+}
+
+.facebook img {
+    float: left;
+    height: 100%;
+}
+
+.facebook .text-wrap {
+    padding-left: 5px; 
+    text-align: left;
+    float: left;
+    height: 100%;
+}
+
+.facebook .bold {
+    font-weight: bold;
+}
