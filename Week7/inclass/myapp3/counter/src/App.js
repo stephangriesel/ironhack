@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Student from './components/Student';
-import StudentData from './data/students';
 import Counter from './components/Counter';
 import './App.css';
 import './Student.css';
