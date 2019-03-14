@@ -10,6 +10,7 @@ class NavBar extends Component {
                       <li><NavLink to='/counter'>Counter</NavLink></li>
                       <li><NavLink to='/student'>IdCard</NavLink></li>
                       <li><NavLink to='/clickpicture'>ClickablePicture</NavLink></li>
+                      <li><NavLink to='/boxcolor'>BoxColor</NavLink></li>
                     </ul>
                   </nav>
         )

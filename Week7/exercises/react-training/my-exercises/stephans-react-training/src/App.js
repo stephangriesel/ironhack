@@ -14,6 +14,7 @@ import Student from './components/Student';
 import Search from './components/Search';
 import ClickPicture from './components/ClickPicture';
 import Home from './components/Home';
+import BoxColor from './components/BoxColor'
 
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
             <Route path="/student" component={Search}></Route>
             <Route path="/search" component={Search}></Route>
             <Route path="/clickpicture" component={ClickPicture}></Route>
+            <Route path="/boxcolor" component={BoxColor}></Route>
           </Switch>
         </div>
 

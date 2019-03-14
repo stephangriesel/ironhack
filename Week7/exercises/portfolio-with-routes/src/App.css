@@ -1,12 +1,15 @@
-#root {
-  display: flex;
-  justify-content: center;
+.nav-style {
+  text-align: right;
 }
 
-#root h1 {
-  border: 1px solid #000;
-  margin: 2px;
-  padding: 5px;
+.nav-style li {
+  list-style: none;
+  display: inline;
+  margin: 0 10px;
+}
+
+.nav-style a {
+  text-decoration: none;
 }
 
 .App {
