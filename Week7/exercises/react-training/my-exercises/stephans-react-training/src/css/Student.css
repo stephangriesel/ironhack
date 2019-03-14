@@ -1,3 +1,7 @@
+.clickPic {
+    margin-top:20px;
+}
+
 .nav-style {
     margin-top:20px;
 }
@@ -9,6 +13,7 @@ ul {
 
 img {
     width: 200px;
+    margin-top:20px;
 }
 
 .wrapper {

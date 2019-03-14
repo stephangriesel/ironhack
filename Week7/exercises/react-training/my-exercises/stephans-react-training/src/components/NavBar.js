@@ -8,7 +8,8 @@ class NavBar extends Component {
                     <ul>
                       <li><NavLink to='/'>Home</NavLink></li>
                       <li><NavLink to='/counter'>Counter</NavLink></li>
-                      <li><NavLink to='/student'>Students</NavLink></li>
+                      <li><NavLink to='/student'>IdCard</NavLink></li>
+                      <li><NavLink to='/clickpicture'>ClickablePicture</NavLink></li>
                     </ul>
                   </nav>
         )

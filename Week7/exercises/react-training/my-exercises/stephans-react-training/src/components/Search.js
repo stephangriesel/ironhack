@@ -17,7 +17,7 @@ class Search extends Component {
         var showMeTheStudents = this.state.students.filter(student => {
             return student.firstName.indexOf(searchVal) !== -1;
         })
-        this.setState({searchStudents: showMeTheStudents}) // searchStudents = contains studentdata, showMeTheStudents us the filtered students
+        this.setState({ searchStudents: showMeTheStudents }) // searchStudents = contains studentdata, showMeTheStudents us the filtered students
     }
 
     render() {
