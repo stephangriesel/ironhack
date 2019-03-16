@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// var express = require('express');
-// var cors = require('cors');
-// var app = express();
 
 class Search extends Component {
 
@@ -11,6 +8,7 @@ class Search extends Component {
         this.state = {
             students: []
         }
+    this.search = this.search.bind(this);
     }
 
     search(event) {
@@ -50,7 +48,5 @@ class Search extends Component {
     }
 
 }
-
-// app.use(cors());
 
 export default Search

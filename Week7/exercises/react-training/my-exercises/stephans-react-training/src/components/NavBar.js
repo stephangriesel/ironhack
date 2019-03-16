@@ -11,6 +11,7 @@ class NavBar extends Component {
                       <li><NavLink to='/student'>IdCard</NavLink></li>
                       <li><NavLink to='/clickpicture'>ClickablePicture</NavLink></li>
                       <li><NavLink to='/boxcolor'>BoxColor</NavLink></li>
+                      <li><NavLink to='/randomnumber'>Random Number</NavLink></li>
                     </ul>
                   </nav>
         )

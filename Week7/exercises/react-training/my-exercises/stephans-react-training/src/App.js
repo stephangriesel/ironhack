@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 import './css/Student.css';
-import StudentData from './data/students.json';
 import {
   BrowserRouter as Router,
-  NavLink,
   Route,
   Switch,
 } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Counter from './components/Counter';
-import Student from './components/Student';
 import Search from './components/Search';
 import ClickPicture from './components/ClickPicture';
 import Home from './components/Home';
 import BoxColor from './components/BoxColor'
+import RandomNumber from './components/RandomNumber';
 
 
 class App extends Component {
@@ -32,6 +30,7 @@ class App extends Component {
             <Route path="/search" component={Search}></Route>
             <Route path="/clickpicture" component={ClickPicture}></Route>
             <Route path="/boxcolor" component={BoxColor}></Route>
+            <Route path="/randomnumber" component={RandomNumber}></Route>
           </Switch>
         </div>
 
