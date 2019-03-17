@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../css/Country.css';
 
 
 class Countries extends Component {
@@ -27,8 +28,16 @@ class Countries extends Component {
                         <div className="card">
                             <h1>{country.name.common}</h1>
                             <p>Official Languages:
-                                {country.languages.nld}
-                                {country.languages.pap}
+                                {/* map over languages */}
+                            </p>
+                            <p>Currency used:
+                                <span class="bold-gold"> {country.currency}</span>
+                            </p>
+                            <p>Capital:
+                                <span class="bold"> {country.capital}</span>
+                            </p>
+                            <p>Top Level Domain:
+                                <span class="bold"> {country.tld}</span>
                             </p>
                         </div>
                     </div>

@@ -1,0 +1,13 @@
+p {
+    margin:0;
+    padding:0;
+}
+
+.bold-gold {
+    font-weight:bold;
+    color:#DAA520;
+}
+
+.bold {
+    font-weight:bold;
+}
