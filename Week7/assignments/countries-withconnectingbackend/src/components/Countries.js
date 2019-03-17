@@ -53,7 +53,9 @@ class Countries extends Component {
                         <div className="card">
                             <h1>{country.name.common}</h1>
                             <p>Official Languages:
-                                {/* map over languages */}
+                            <ul>
+                                {/* {country.languages.map((lang) => <li>{lang}</li>)} */}
+                            </ul>
                             </p>
                             <p>Currency used:
                                 <span className="bold-gold"> {country.currency}</span>
