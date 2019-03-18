@@ -52,20 +52,21 @@ class Countries extends Component {
                     <div className="wrapper">
                         <div className="card">
                             <h1>{country.name.common}</h1>
-                            <p>Official Languages:
-                            <ul>
-                                {/* {country.languages.map((lang) => <li>{lang}</li>)} */}
-                            </ul>
-                            </p>
-                            <p>Currency used:
+                            <h4>Official Languages:</h4>
+                            
+                                <ul>
+                                    {/* {this.props.country.languages.map((lang, i) => <li key={i}>{lang}</li>)} */}
+                                </ul>
+                        
+                            <h4>Currency used:
                                 <span className="bold-gold"> {country.currency}</span>
-                            </p>
-                            <p>Capital:
+                            </h4>
+                            <h4>Capital:
                                 <span className="bold"> {country.capital}</span>
-                            </p>
-                            <p>Top Level Domain:
+                            </h4>
+                            <h4>Top Level Domain:
                                 <span className="bold"> www.yourdomain{country.tld}</span>
-                            </p>
+                            </h4>
                         </div>
                     </div>
                 )}
