@@ -45,10 +45,10 @@ class Form extends Component {
         return (
             
             <form onSubmit={this.handleSubmit}>
-                <input onChange={this.handleChange} name="firstname" placeholder="name" type="text" value={this.state.firstname}></input>
-                <input onChange={this.handleChange} name="lastname" placeholder="lastname" type="text" value={this.state.lastname}></input>
-                <input onChange={this.handleChange} name="email" placeholder="email" type="text" value={this.state.email}></input>
-                <input onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}></input>
+                <input onChange={event => this.handleChange(event)} name="firstname" placeholder="name" type="text" value={this.state.firstname}></input>
+                <input onChange={event => this.handleChange(event)} name="lastname" placeholder="lastname" type="text" value={this.state.lastname}></input>
+                <input onChange={event => this.handleChange(event)} name="email" placeholder="email" type="text" value={this.state.email}></input>
+                <input onChange={event => this.handleChange(event)} name="password" placeholder="password" type="password" value={this.state.password}></input>
                 <input type="submit"></input>
             </form>
         )
