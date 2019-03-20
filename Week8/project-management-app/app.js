@@ -3,7 +3,6 @@ require('dotenv').config();
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
-const router = express.Router();
 const favicon      = require('serve-favicon');
 const hbs          = require('hbs');
 const mongoose     = require('mongoose');
@@ -72,15 +71,12 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 // ROUTES MIDDLEWARE STARTS HERE:
+const index = require('./routes/index');
+
+
+app.use('/', index);
 
 app.use('/api', require('./routes/project-routes'));
 app.use('/api', require('./routes/task-routes'));
 
-const index = require('./routes/index');
-app.use('/', index);
-
-
-
-
-module.exports = router ;
 module.exports = app;

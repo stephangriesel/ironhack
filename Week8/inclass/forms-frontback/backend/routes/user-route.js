@@ -47,7 +47,7 @@ router.post('/login', function (req, res) {
           // set cookie with user data
           req.session.user = user;
           res.cookie("email", req.body.email, { signed: true }); 
-          res.cookie("userId", user._id, { signed: true });     
+          res.cookie("userId", user._id, { signed: true }); 
           res.send('success');
         } else {
           res.render('login', { error: 'Invalid credentials' })
@@ -56,13 +56,13 @@ router.post('/login', function (req, res) {
     })
   });
   
-  // router.get('/login', (req, res) => {
-  //   if (req.session.currentUser) {
-  //     req.session((err) => {
-  //       res.render('', { newMessage: true })
-  //     })
-  //   } else res.render("login")     
-  // });
+  router.get('/login', (req, res) => {
+    if (req.session.currentUser) {
+      req.session((err) => {
+        res.render('', { newMessage: true })
+      })
+    } else res.render("login")     
+  });
   
   router.get('/logout', function (req, res) {
     res.clearCookie('email'); 
