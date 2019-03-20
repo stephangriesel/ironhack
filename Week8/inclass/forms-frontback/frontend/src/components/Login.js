@@ -4,8 +4,6 @@ import axios from 'axios';
 
 class Login extends Component {
     state = {
-        firstname: "",
-        lastname: "",
         email: "",
         password: ""
     }
