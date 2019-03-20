@@ -48,7 +48,7 @@ router.post('/login', function (req, res) {
           req.session.user = user;
           res.cookie("email", req.body.email, { signed: true }); 
           res.cookie("userId", user._id, { signed: true });     
-          // res.redirect('/');
+          res.send('success');
         } else {
           res.render('login', { error: 'Invalid credentials' })
         }
