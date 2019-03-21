@@ -30,7 +30,7 @@ router.get('/projects', (req, res, next) => { // get projects collection
     })
 });
 
-// GET ROUTE TO DETAILED VIEW << KIND OF WORKING
+// GET ROUTE TO DETAILED VIEW 
 router.get('/projects/:id', (req, res, next)=>{
   if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
@@ -61,7 +61,7 @@ router.put('/api/projects/:id', (req, res, next)=>{
     })
 })
 
-// DELETE route => to delete a specific project
+// DELETE ITEM
 router.delete('/projects/:id', (req, res, next)=>{
   if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
