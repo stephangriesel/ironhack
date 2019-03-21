@@ -16,7 +16,11 @@ class ProjectDetails extends Component {
 
   getSingleProject = () => {
       const { params } = this.props.match;
-      axios.get(`http://localhost:5000/api/projects/${params.id}`)
+      axios({
+          method: "get",
+          url: `http://localhost:5000/api/projects/${params.id}`,
+          withCredentials: true
+      })
       .then( responseFromApi =>{
           const theProject = responseFromApi.data;
           this.setState(theProject);
@@ -26,21 +30,15 @@ class ProjectDetails extends Component {
       })
   }
 
-  // Edit form helper
-
+  // EDIT FORM
   renderEditForm = () => {
     if(!this.state.title){
       this.getSingleProject();
     } else {
-    //                                                    {...props} => so we can have 'this.props.history' in Edit.js
-    //                                                                                          ^
-    //                                                                                          |
       return <EditProject theProject={this.state} getTheProject={this.getSingleProject} {...this.props} />
         
     }
   }
-
-  
 
   // DELETE PROJECT:
   deleteProject = () => {
@@ -83,7 +81,6 @@ class ProjectDetails extends Component {
                     </Link>
                 </div>
             )
-            
         }) }
 
         <div>{this.renderEditForm()}</div> {/* called inside the render() method and what it does is basically this: checks if this.state has any properties (we picked title), and if that’s true, it’s invoking the getSingleProject() method which gets the project object from our API and sets it to the state of the component. On the next execution of renderEditForm(), it’s rendering <EditProject /> component with props passed down to itself.*/}

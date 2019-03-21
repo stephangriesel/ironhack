@@ -2,10 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router  = express.Router();
 const Project = require('../models/project-model');
-const Task = require('../models/task-model'); // <== !!!
+const Task = require('../models/task-model');
 
+// CREATE A NEW PROJECT
 router.post('/projects', (req, res, next)=>{
- 
   Project.create({ //creates new project collection in db
     title: req.body.title,
     description: req.body.description,
@@ -19,6 +19,7 @@ router.post('/projects', (req, res, next)=>{
     })
 });
 
+// GET THE PROJECTS
 router.get('/projects', (req, res, next) => { // get projects collection
   Project.find().populate('tasks') // find all the projects, remember that is what () is for, queries 101, populate tasks collection
     .then(allTheProjects => { // we get a promise from our db
@@ -29,19 +30,12 @@ router.get('/projects', (req, res, next) => { // get projects collection
     })
 });
 
-// GET route => to get a specific project/detailed view
+// GET ROUTE TO DETAILED VIEW << KIND OF WORKING
 router.get('/projects/:id', (req, res, next)=>{
-
   if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
-
-  // our projects have array of tasks' ids and 
-  // we can use .populate() method to get the whole task objects
-  //                                   ^
-  //                                   |
-  //                                   |
   Project.findById(req.params.id).populate('tasks') // get specifified project by id
     .then(response => {
       res.status(200).json(response);
@@ -51,9 +45,8 @@ router.get('/projects/:id', (req, res, next)=>{
     })
 })
 
-// PUT route => to update a specific project
-router.put('/projects/:id', (req, res, next)=>{
-
+// PUT route, UPDATE OBJECT
+router.put('/api/projects/:id', (req, res, next)=>{
   if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
@@ -70,7 +63,6 @@ router.put('/projects/:id', (req, res, next)=>{
 
 // DELETE route => to delete a specific project
 router.delete('/projects/:id', (req, res, next)=>{
-
   if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;

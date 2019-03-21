@@ -51,7 +51,6 @@ class AddTask extends Component {
                   <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
                   <label>Description:</label>
                   <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
-                  
                   <input type="submit" value="Submit" />
                   </form>
             </div>
