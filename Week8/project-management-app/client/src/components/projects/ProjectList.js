@@ -19,7 +19,7 @@ class ProjectList extends Component {
     })
   }
 
-  componentDidMount() {
+  componentDidMount() { // we use componentDidMount() lifecycle method to fetch the data from API
     this.getAllProjects();
   }
 
@@ -30,7 +30,7 @@ class ProjectList extends Component {
           { this.state.listOfProjects.map( project => {
             return (
               <div key={project._id}>
-                <Link to={`/projects/${project._id}`}>
+                <Link to={`/projects/${project._id}`}> {/* don’t forget to give each element the database ID as the key with key={project._id}) */}
                   <h3>{project.title}</h3>
                 </Link>
                 {/* <p style={{maxWidth: '400px'}} >{project.description} </p> */}
