@@ -1,0 +1,57 @@
+/* 
+
+Lightblue: #4384f4
+Lighter blue: #80b4f0
+DarkBlue: #07327d
+Brownish: #7b7b7b 
+
+*/
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+body {
+  background:#7b7b7b;
+  color:#f0f0f0;
+}
+
+/* Heading Uppercase Text */
+.uppercaseText {
+  text-transform: uppercase;
+}
+
+/* All links white */
+
+a {
+  color:#f3f2f3;
+  text-decoration: none;
+}
+
+/* All buttons blue */
+
+button {
+  background:#4384f4;
+  padding:10px 15px;
+  margin:7px;
+  border:none;
+  text-transform: uppercase;
+  color:#f0f0f0;
+  font-size:18px;
+  cursor: pointer;
+  outline:none;
+}
